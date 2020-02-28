@@ -54,7 +54,7 @@ end
 --初始化WaterfallView
 local function initWaterfallView()
 
-    collectionView = WaterfallView(true, true)
+    waterfallView = WaterfallView(true, true)
             :width(MeasurementType.MATCH_PARENT)
             :height(MeasurementType.MATCH_PARENT)
             :bgColor(Color(255, 255, 0, 0.5))
@@ -62,49 +62,49 @@ local function initWaterfallView()
             :showScrollIndicator(true)--显示滑动指示器
             :marginTop(topHeight)
     --下拉刷新事件回调
-    collectionView:setRefreshingCallback(
+    waterfallView:setRefreshingCallback(
             function()
                 --print("开始刷新")
                 System:setTimeOut(function()
                     --2秒后结束刷新
                     --print("结束刷新了")
-                    collectionView:stopRefreshing()
+                    waterfallView:stopRefreshing()
                 end, 2)
             end)
     --上拉加载事件回调
-    collectionView:setLoadingCallback(function()
+    waterfallView:setLoadingCallback(function()
         --print("开始加载")
         System:setTimeOut(function()
             --2秒后结束加载
             --print("结束加载")
-            collectionView:stopLoading()
+            waterfallView:stopLoading()
             --已加载全部
-            collectionView:noMoreData()
+            waterfallView:noMoreData()
         end, 2)
 
     end)
     --开始滑动的回调事件
-    collectionView:setScrollBeginCallback(function()
+    waterfallView:setScrollBeginCallback(function()
         --print("开始滑动")
     end)
     --滑动中的回调事件
-    collectionView:setScrollingCallback(function()
+    waterfallView:setScrollingCallback(function()
         ----print("滑动中")
     end)
     --结束滑动的回调事件
-    collectionView:setScrollEndCallback(function()
+    waterfallView:setScrollEndCallback(function()
         --print("结束滑动")
     end)
-    return collectionView
+    return waterfallView
 end
 --初始化WaterfallLayout
 local function initWaterfallLayout()
 
-    collectionLayout = WaterfallLayout()
-    collectionLayout:itemSpacing(5)--间隔大小
+    waterfallLayout = WaterfallLayout()
+    waterfallLayout:itemSpacing(5)--间隔大小
                     :lineSpacing(5)
                     :spanCount(2)
-    return collectionLayout
+    return waterfallLayout
 end
 
 --初始化WaterfallAdapter
@@ -197,11 +197,11 @@ local function initAdapter()
     return adapter
 end
 --初始化WaterfallView
-collectionView = initWaterfallView()
+waterfallView = initWaterfallView()
 --初始化WaterfallLayout
-collectionLayout = initWaterfallLayout()
+waterfallLayout = initWaterfallLayout()
 -- 初始化WaterfallAdapter
 adapter = initAdapter()
-collectionView:layout(collectionLayout)
-collectionView:adapter(adapter)
-window:addView(collectionView)
+waterfallView:layout(waterfallLayout)
+waterfallView:adapter(adapter)
+window:addView(waterfallView)

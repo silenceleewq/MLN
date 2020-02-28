@@ -8,7 +8,7 @@ end
 local function initCollectionView()
     collectionView = CollectionView(true, true)
             :width(MeasurementType.MATCH_PARENT)
-            :height(H - 100 - topHeight)
+            :height(H - topHeight)
             :scrollDirection(ScrollDirection.VERTICAL)--竖直方向滑动
     --:scrollDirection(ScrollDirection.HORIZONTAL)--水平方向滑动
             :showScrollIndicator(true)--是否显示滑动指示器
@@ -50,10 +50,10 @@ local function initCollectionView()
     end)
     return collectionView
 end
---初始化CollectionViewGridLayout
-local function initCollectionViewGridLayout()
+--初始化CollectionViewLayout
+local function initCollectionViewLayout()
 
-    collectionLayout = CollectionViewGridLayout()
+    collectionLayout = CollectionViewLayout()
     collectionLayout:itemSpacing(5)--间隔大小
                     :lineSpacing(5)
     --竖直滑动代表显示列数；水平滑动代表显示行数
@@ -127,34 +127,10 @@ contentView:width(W):height(H)
            :bgColor(Color(255, 255, 255, 1))
 --初始化CollectionView
 collectionView = initCollectionView()
---初始化CollectionViewGridLayout
-collectionLayout = initCollectionViewGridLayout()
+--初始化CollectionViewLayout
+collectionLayout = initCollectionViewLayout()
 --初始化CollectionViewAdapter
 adapter = initAdapter()
 collectionView:layout(collectionLayout)
 collectionView:adapter(adapter)
-contentView:addView(collectionView)
---操作栏
-operLayout = LinearLayout(LinearType.HORIZONTAL):height(100)
-addLabel = Label():width(W / 2):height(100):text("点我新增cell")
-                  :bgColor(Color(255, 255, 255, 1)):fontSize(16)
-                  :setGravity(Gravity.CENTER):textAlign(TextAlign.CENTER)
-addLabel:onClick(function()
-    --在指定位置插入cell
-    count = count + 2
-    collectionView:insertCellsAtSection(1, 1, 2)
-    --collectionView:insertRowsAtSection(1, 1, 2,true)
-end)
-subLabel = Label():width(W / 2):height(100):text("点我删除cell")
-                  :bgColor(Color(255, 255, 255, 1)):fontSize(16)
-                  :setGravity(Gravity.CENTER):textAlign(TextAlign.CENTER)
-subLabel:onClick(function()
-    --在指定位置删除cell
-    count = count - 2
-    collectionView:deleteCellsAtSection(1, 1, 2)
-    --collectionView:deleteRowsAtSection(1, 1, 2,true)
-end)
-operLayout:addView(addLabel)
-operLayout:addView(subLabel)
-contentView:addView(operLayout)
-window:addView(contentView)
+window:addView(collectionView)
