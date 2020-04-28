@@ -57,7 +57,7 @@ Pod::Spec.new do |s|
         'MLNDevTool_Util' => 'MLN-iOS/MLNDevTool/Classes/DevTool/Util/**/Assets/*.{png,lua,xib,storyboard}',
         'MLNDevTool_UI' => 'MLN-iOS/MLNDevTool/Classes/DevTool/UI/**/Assets/*.{png,xib}'
       }
-      d.dependency 'MLN', '~> 1.0.0.2'
+      d.dependency 'MLN'
       d.dependency  'MLNDevTool/Conn'
     end
 
