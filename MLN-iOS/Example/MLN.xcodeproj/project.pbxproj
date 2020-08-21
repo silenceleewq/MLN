@@ -75,6 +75,8 @@
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
+		A438CEC324EFB23100BDFF4F /* MLNTest1Model.m in Sources */ = {isa = PBXBuildFile; fileRef = A438CEC224EFB23100BDFF4F /* MLNTest1Model.m */; };
+		A49B425424EF69A000E21993 /* ArgoUIBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A49B425324EF69A000E21993 /* ArgoUIBaseModel.m */; };
 		A4C3142624C7DE2700444CA4 /* MLNGlobalTimeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = A4C3142524C7DE2700444CA4 /* MLNGlobalTimeTest.m */; };
 		B27F658C2377AA6C00F2D341 /* MLNGalleryMineBottomPage.m in Sources */ = {isa = PBXBuildFile; fileRef = B27F657C2377AA6B00F2D341 /* MLNGalleryMineBottomPage.m */; };
 		B27F658F2377AA6C00F2D341 /* MLNGalleryMineInfoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B27F65842377AA6B00F2D341 /* MLNGalleryMineInfoViewModel.m */; };
@@ -279,6 +281,10 @@
 		614D6372A3D812E53BAA054F /* Pods-MLN_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLN_Tests.release.xcconfig"; path = "Target Support Files/Pods-MLN_Tests/Pods-MLN_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6ABC029A38FCC0A39C207FA6 /* Pods-MLN_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLN_Tests.debug.xcconfig"; path = "Target Support Files/Pods-MLN_Tests/Pods-MLN_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		6ED891C3203090F5CB5310E5 /* Pods-LuaNative.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LuaNative.debug.xcconfig"; path = "Target Support Files/Pods-LuaNative/Pods-LuaNative.debug.xcconfig"; sourceTree = "<group>"; };
+		A438CEC124EFB23100BDFF4F /* MLNTest1Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLNTest1Model.h; sourceTree = "<group>"; };
+		A438CEC224EFB23100BDFF4F /* MLNTest1Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLNTest1Model.m; sourceTree = "<group>"; };
+		A49B425224EF69A000E21993 /* ArgoUIBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArgoUIBaseModel.h; sourceTree = "<group>"; };
+		A49B425324EF69A000E21993 /* ArgoUIBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArgoUIBaseModel.m; sourceTree = "<group>"; };
 		A4C3142424C7DE2700444CA4 /* MLNGlobalTimeTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNGlobalTimeTest.h; sourceTree = "<group>"; };
 		A4C3142524C7DE2700444CA4 /* MLNGlobalTimeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNGlobalTimeTest.m; sourceTree = "<group>"; };
 		B27F657C2377AA6B00F2D341 /* MLNGalleryMineBottomPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNGalleryMineBottomPage.m; sourceTree = "<group>"; };
@@ -655,6 +661,7 @@
 		6003F593195388D20070C39A /* Example for MLN */ = {
 			isa = PBXGroup;
 			children = (
+				A49B425124EF694D00E21993 /* Demo */,
 				FAE9C59223A250CD002C830D /* gallery.bundle */,
 				FAE9C59423A2529C002C830D /* inner_demo.bundle */,
 				00268A4024B7011500D8C617 /* EYLogViewer.h */,
@@ -729,6 +736,17 @@
 				C0FB2CAC8F9592C3092ACF62 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		A49B425124EF694D00E21993 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				A49B425224EF69A000E21993 /* ArgoUIBaseModel.h */,
+				A49B425324EF69A000E21993 /* ArgoUIBaseModel.m */,
+				A438CEC124EFB23100BDFF4F /* MLNTest1Model.h */,
+				A438CEC224EFB23100BDFF4F /* MLNTest1Model.m */,
+			);
+			path = Demo;
 			sourceTree = "<group>";
 		};
 		B27F657B2377AA6B00F2D341 /* BottomPage */ = {
@@ -1385,6 +1403,7 @@
 				B29500B72371A3ED00F48F09 /* MLNGalleryMainViewController.m in Sources */,
 				FA906FA024EBC8D500F8DAE2 /* MLNUICustomHotReloadViewController.m in Sources */,
 				00E6526B2420AD1800A878B8 /* MLNBindModelViewController.m in Sources */,
+				A49B425424EF69A000E21993 /* ArgoUIBaseModel.m in Sources */,
 				B27F65D62377AAC400F2D341 /* MLNHomeDataHandler.m in Sources */,
 				00D5985E24B825BF00EA1660 /* MLNBindTestShopStoreController.m in Sources */,
 				30E24E9322F3D74A00A0E78C /* MLNTestMe.m in Sources */,
@@ -1413,6 +1432,7 @@
 				B27F65912377AA6C00F2D341 /* MLNGalleryMineViewController.m in Sources */,
 				B27F65CA2377AAAE00F2D341 /* MLNGalleryMessageBaseCell.m in Sources */,
 				B2DD3E5F237990E9002AB6AD /* MLNPackageManager.m in Sources */,
+				A438CEC324EFB23100BDFF4F /* MLNTest1Model.m in Sources */,
 				B27F65E12377AB1600F2D341 /* MLNGalleryPlusViewController.m in Sources */,
 				B27F65A82377AA9700F2D341 /* MLNGalleryDiscoverViewController.m in Sources */,
 			);
@@ -1701,6 +1721,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Xcode iOS Wildcard";
 				SWIFT_VERSION = 4.0;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1768,8 +1789,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.MMILua-Example3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Xcode iOS Wildcard";
 				SWIFT_VERSION = 4.0;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

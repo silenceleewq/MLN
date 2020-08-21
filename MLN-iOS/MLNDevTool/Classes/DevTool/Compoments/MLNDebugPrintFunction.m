@@ -58,6 +58,7 @@ static int mln_print(lua_State *L)
     }
     [buf appendString:@"\n"];
     [MLNDebugPrintFunction postMsg:buf.copy];
+    NSLog(@"print:%@", buf);
     return 0;
 }
 

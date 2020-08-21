@@ -22,6 +22,11 @@
 #import "MLNUIBridge.h"
 #import "MLNUIDB.h"
 #import "MLNGlobalTimeTest.h"
+#import "MLNTest1Model.h"
+#import "MLNUIKitInstance.h"
+#import <MLNHotReload.h>
+
+
 
 #define kConsoleWidth 250.f
 #define kConsoleHeight 280.f
@@ -41,6 +46,9 @@
 @property (nonatomic, strong) MLNHotReloadViewController *luaVC;
 @property (nonatomic, strong) MLNOfflineViewController *offlineViewController;
 @property (weak, nonatomic) IBOutlet UIButton *mlnHotReload;
+
+@property (nonatomic, strong) MLNTest1Model *testModel;
+
 @end
 
 @implementation MLNHomeViewController
@@ -72,7 +80,16 @@
 - (IBAction)hotReloadAction:(id)sender {
     MLNUIHotReloadViewController *hotReloadVC = [[MLNUIHotReloadViewController alloc] initWithEntryFileName:nil];
     [hotReloadVC setRegClasses:@[[MLNStaticTest class]/*, [MLNUIBridge class]*/, [MLNUIDB class], [MLNGlobalTimeTest class]]];
+    
+    
     [self.navigationController pushViewController:hotReloadVC animated:YES];
+    
+    __weak typeof(self) ws = self;
+    [MLNHotReload getInstance].setupInstanceCallback = ^(MLNKitInstance * _Nonnull instance) {
+        ws.testModel = [[MLNTest1Model alloc] initWithLuaState:instance.luaCore.state];
+        ws.testModel.m1 = @"abc";
+    };
+    
 }
 - (IBAction)mlnHotReloadAction:(id)sender {
     MLNHotReloadViewController *hotReloadVC = [MLNHotReloadViewController.alloc initWithEntryFilePath:nil];
