@@ -46,7 +46,7 @@ Pod::Spec.new do |s|
         k.framework = 'Foundation', 'UIKit', 'CoreGraphics', 'AVFoundation'
         k.source_files = 'MLN-iOS/MLN/Classes/MUIKit/**/*.{h,m,c,cpp,mm}'
         k.exclude_files = 'MLN-iOS/MLN/Classes/MUIKit/Component/ObjectAnimation/Source/**/*.{h,c,cpp}'
-        k.public_header_files = 'MLN-iOS/MLN/Classes/MUIKit/**/*.h'
+        k.public_header_files = 'MLN-iOS/MLN/Classes/MUIKit/**/*.h', 'Yoga/Yoga.h', 'Yoga/YGEnums.h', 'Yoga/YGMacros.h'
         k.dependency 'ArgoUI/Core'
         
         k.subspec 'AnimationCPP' do |ani|
