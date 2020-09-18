@@ -425,7 +425,7 @@ LUAUI_EXPORT_METHOD(resume, "luaui_resumeAnimations", MLNUIAnimation)
 LUAUI_EXPORT_METHOD(stop, "luaui_stop", MLNUIAnimation)
 LUAUI_EXPORT_METHOD(setStartCallback, "luaui_setStartCallback:", MLNUIAnimation)
 LUAUI_EXPORT_METHOD(setEndCallback, "luaui_setEndCallback:", MLNUIAnimation)
-LUAUI_EXPORT_END(MLNUIAnimation, Animation, NO, NULL, NULL)
+LUAUI_EXPORT_END(MLNUIAnimation, Transform, NO, NULL, NULL)
 
 @end
 

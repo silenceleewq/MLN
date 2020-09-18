@@ -76,6 +76,8 @@
 // Animations
 #import "MLNUIAnimator.h"
 #import "MLNUIAnimation.h"
+#import "MLNUITransform.h"
+#import "MLNUIPinchGestureRecognizer.h"
 #import "MLNUIFrameAnimation.h"
 
 //New Animation
@@ -259,7 +261,9 @@ static NSArray<Class<MLNUIExportProtocol>> *animationClasses;
                              [MLNUIAnimationZoneView class],
                              [MLNUIObjectAnimation class],
                              [MLNUIObjectAnimationSet class],
-                             [MLNUIInteractiveBehavior class]
+                             [MLNUIInteractiveBehavior class],
+                             [MLNUITransform class],
+                             [MLNUIPinchGestureRecognizer class],
                             ];
     }
     return animationClasses;

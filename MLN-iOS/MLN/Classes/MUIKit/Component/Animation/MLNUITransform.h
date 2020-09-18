@@ -3,6 +3,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MLNUIEntityExportProtocol.h"
 
-@interface MLNUITransform : NSObject
+@interface MLNUITransform : NSObject <MLNUIEntityExportProtocol>
 @end

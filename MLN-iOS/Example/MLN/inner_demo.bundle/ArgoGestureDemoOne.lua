@@ -139,8 +139,8 @@ active:followEnable(true)
       :enable(true)
 --positionYAnim:addInteractiveBehavior(active)
 
-label2 = Label():width(50)
-                :height(50)
+label2 = Label():width(200)
+                :height(200)
                 :text("呼呼呼hhh")
                 :bgColor(Color(200, 100, 10, 1))
                 :positionType(PositionType.ABSOLUTE)
@@ -148,25 +148,32 @@ label2 = Label():width(50)
                 :positionLeft(100)
 window:addView(label2)
 
-active2 = InteractiveBehavior(InteractiveType.GESTURE)
-        :targetView(label2)
+-- active2 = InteractiveBehavior(InteractiveType.GESTURE)
+--         :targetView(label2)
 
-active2:followEnable(true)
-       :enable(true)
+-- active2:followEnable(true)
+--        :enable(true)
 
 
---animation1 = Animation():setTranslateX(0, 300)
---animation1:start(label2)
+-- --animation1 = Animation():setTranslateX(0, 300)
+-- --animation1:start(label2)
 
-System:setTimeOut(function()
-    --2秒后结束刷新
-    --print("结束刷新了")
-    label2:scale(2, 1, false)
-end, 2)
+-- System:setTimeOut(function()
+--     --2秒后结束刷新
+--     --print("结束刷新了")
+--     label2:scale(2, 1, false)
+-- end, 2)
 
-print("type-->", TouchType.BEGIN, TouchType.MOVE, TouchType.END)
-active:touchBlock(function(type, distance, velocity)
-    print("touchBlock-->", type, distance, velocity)
+-- print("type-->", TouchType.BEGIN, TouchType.MOVE, TouchType.END)
+-- active:touchBlock(function(type, distance, velocity)
+--     print("touchBlock-->", type, distance, velocity)
+-- end)
+
+--local t = Animation()
+local pinch = PinchGestureRecognizer()
+pinch:attachView(label2)
+pinch:setPinchCallback(function( scale )
+  -- body
+  print("------------- scale = ", scale)
 end)
-
 
