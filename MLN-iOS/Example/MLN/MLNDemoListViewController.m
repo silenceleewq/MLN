@@ -74,6 +74,7 @@
         [self.navigationController pushViewController:vc animated:YES];
         return;
     }
+
     if ([demoName hasPrefix:@"Argo"]) {
         ArgoViewController *viewController = [[ArgoViewController alloc] initWithEntryFileName:demoName bundleName:@"inner_demo.bundle"];
         [self.navigationController pushViewController:viewController animated:YES];
@@ -106,6 +107,8 @@
                        @"LinearLayoutDemo.lua",
                        @"TableViewDemo.lua",
                        @"ArgoTableViewCeilingCellDemo.lua",
+                       @"ArgoTableViewZoomPictureDemo.lua",
+                       @"ArgoGestureDemoOne.lua",
                        @"ViewPagerDemo.lua",
                        @"WaterfallViewDemo.lua",
 //                       @"MLNBindModelViewController",

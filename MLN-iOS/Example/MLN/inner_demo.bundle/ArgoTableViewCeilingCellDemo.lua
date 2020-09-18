@@ -100,6 +100,8 @@ tableView:disallowFling(true)
 local adapter = initAdapter(tableView)
 tableView:adapter(adapter)
 window:addView(tableView)
+
+
 --System:setTimeOut(function()
 --    tableView:scrollToCell(3, 1, true)
 --end, 2)
