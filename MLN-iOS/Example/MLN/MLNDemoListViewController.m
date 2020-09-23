@@ -121,6 +121,7 @@
                        @"MLNKuaController",
                        @"MLNViewPagerDemo",
                        @"DemoLiyifengViewController",
+                       @"MLNAutoFillViewController",
                        ];
     }
     return _demoArray;

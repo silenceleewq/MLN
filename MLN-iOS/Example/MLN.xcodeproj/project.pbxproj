@@ -141,9 +141,30 @@
 		FA4EE310237909BC00449250 /* MLNGalleryMineBottomPageCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4EE30F237909BC00449250 /* MLNGalleryMineBottomPageCollectCell.m */; };
 		FA4EE313237917E500449250 /* MLNGalleryMinePageCellCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA4EE312237917E500449250 /* MLNGalleryMinePageCellCollectCell.m */; };
 		FA6C1CE1248E41D10025BA96 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6C1CE0248E41D10025BA96 /* libc++.tbd */; };
+		FA731434250619E500A2B96B /* HeadlineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA731427250619E500A2B96B /* HeadlineModel.m */; };
+		FA731435250619E500A2B96B /* SubtitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA73142A250619E500A2B96B /* SubtitleModel.m */; };
+		FA731436250619E500A2B96B /* SloganColdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA73142D250619E500A2B96B /* SloganColdModel.m */; };
+		FA731437250619E500A2B96B /* TitleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA73142E250619E500A2B96B /* TitleModel.m */; };
+		FA731438250619E500A2B96B /* SloganModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA73142F250619E500A2B96B /* SloganModel.m */; };
+		FA731439250619E500A2B96B /* SloganHotModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA731430250619E500A2B96B /* SloganHotModel.m */; };
+		FA73143A250619E500A2B96B /* LRQSloganViewArgoUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA731432250619E500A2B96B /* LRQSloganViewArgoUI.bundle */; };
+		FA73143B250619E500A2B96B /* MLNSloganViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA731433250619E500A2B96B /* MLNSloganViewController.m */; };
+		FA73143F25067FD900A2B96B /* LRQElectViewArgoUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA73143E25067FD900A2B96B /* LRQElectViewArgoUI.bundle */; };
+		FA73144D250728D600A2B96B /* ElectLabelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA731444250728D500A2B96B /* ElectLabelModel.m */; };
+		FA731450250728D600A2B96B /* ElectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA73144B250728D600A2B96B /* ElectModel.m */; };
+		FA7314592507700B00A2B96B /* LrqUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7314542507700A00A2B96B /* LrqUserData.m */; };
+		FA73145B2507700B00A2B96B /* kuaDetailArgoUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FA7314582507700A00A2B96B /* kuaDetailArgoUI.bundle */; };
+		FA73145E2507701800A2B96B /* MLNAutoFillKuaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA73145D2507701800A2B96B /* MLNAutoFillKuaViewController.m */; };
+		FA7314602507713800A2B96B /* userDataJson.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA73145F2507713700A2B96B /* userDataJson.plist */; };
+		FA75315825024FDB008AFCD2 /* MLNAutoFillViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA75315225024FDB008AFCD2 /* MLNAutoFillViewController.m */; };
+		FA75315925024FDB008AFCD2 /* ScoreList.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA75315425024FDB008AFCD2 /* ScoreList.plist */; };
 		FA906FA024EBC8D500F8DAE2 /* MLNUICustomHotReloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA906F9F24EBC8D500F8DAE2 /* MLNUICustomHotReloadViewController.m */; };
 		FA906FA424EBCAB700F8DAE2 /* MLNUITestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FA906FA324EBCAB700F8DAE2 /* MLNUITestModel.m */; };
 		FAE72F1625106DA00092E87D /* ArgoBindingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE72F1525106DA00092E87D /* ArgoBindingTest.m */; };
+		FAE8793B2519D30E00196913 /* MDVChatMovieSearchPageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE879382519D30E00196913 /* MDVChatMovieSearchPageModel.m */; };
+		FAE8793C2519D30E00196913 /* ScoreListArgoUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FAE8793A2519D30E00196913 /* ScoreListArgoUI.bundle */; };
+		FAE879D8251A109900196913 /* highlight_detailArgoUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FAE879D4251A109900196913 /* highlight_detailArgoUI.bundle */; };
+		FAE879D9251A109900196913 /* HighlightModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE879D6251A109900196913 /* HighlightModel.m */; };
 		FAE9C59323A250CD002C830D /* gallery.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FAE9C59223A250CD002C830D /* gallery.bundle */; };
 		FAE9C59523A2529C002C830D /* inner_demo.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FAE9C59423A2529C002C830D /* inner_demo.bundle */; };
 /* End PBXBuildFile section */
@@ -418,11 +439,46 @@
 		FA4EE311237917E500449250 /* MLNGalleryMinePageCellCollectCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLNGalleryMinePageCellCollectCell.h; sourceTree = "<group>"; };
 		FA4EE312237917E500449250 /* MLNGalleryMinePageCellCollectCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLNGalleryMinePageCellCollectCell.m; sourceTree = "<group>"; };
 		FA6C1CE0248E41D10025BA96 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		FA731423250619E500A2B96B /* MLNSloganViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNSloganViewController.h; sourceTree = "<group>"; };
+		FA731426250619E500A2B96B /* SloganColdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SloganColdModel.h; sourceTree = "<group>"; };
+		FA731427250619E500A2B96B /* HeadlineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadlineModel.m; sourceTree = "<group>"; };
+		FA731428250619E500A2B96B /* TitleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleModel.h; sourceTree = "<group>"; };
+		FA731429250619E500A2B96B /* SloganModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SloganModel.h; sourceTree = "<group>"; };
+		FA73142A250619E500A2B96B /* SubtitleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubtitleModel.m; sourceTree = "<group>"; };
+		FA73142B250619E500A2B96B /* SloganHotModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SloganHotModel.h; sourceTree = "<group>"; };
+		FA73142C250619E500A2B96B /* HeadlineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadlineModel.h; sourceTree = "<group>"; };
+		FA73142D250619E500A2B96B /* SloganColdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SloganColdModel.m; sourceTree = "<group>"; };
+		FA73142E250619E500A2B96B /* TitleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleModel.m; sourceTree = "<group>"; };
+		FA73142F250619E500A2B96B /* SloganModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SloganModel.m; sourceTree = "<group>"; };
+		FA731430250619E500A2B96B /* SloganHotModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SloganHotModel.m; sourceTree = "<group>"; };
+		FA731431250619E500A2B96B /* SubtitleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubtitleModel.h; sourceTree = "<group>"; };
+		FA731432250619E500A2B96B /* LRQSloganViewArgoUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LRQSloganViewArgoUI.bundle; sourceTree = "<group>"; };
+		FA731433250619E500A2B96B /* MLNSloganViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNSloganViewController.m; sourceTree = "<group>"; };
+		FA73143E25067FD900A2B96B /* LRQElectViewArgoUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = LRQElectViewArgoUI.bundle; sourceTree = "<group>"; };
+		FA731444250728D500A2B96B /* ElectLabelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElectLabelModel.m; sourceTree = "<group>"; };
+		FA731445250728D500A2B96B /* ElectLabelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectLabelModel.h; sourceTree = "<group>"; };
+		FA731446250728D600A2B96B /* ElectModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectModel.h; sourceTree = "<group>"; };
+		FA73144B250728D600A2B96B /* ElectModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElectModel.m; sourceTree = "<group>"; };
+		FA7314542507700A00A2B96B /* LrqUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LrqUserData.m; sourceTree = "<group>"; };
+		FA7314572507700A00A2B96B /* LrqUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LrqUserData.h; sourceTree = "<group>"; };
+		FA7314582507700A00A2B96B /* kuaDetailArgoUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = kuaDetailArgoUI.bundle; sourceTree = "<group>"; };
+		FA73145C2507701800A2B96B /* MLNAutoFillKuaViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLNAutoFillKuaViewController.h; sourceTree = "<group>"; };
+		FA73145D2507701800A2B96B /* MLNAutoFillKuaViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLNAutoFillKuaViewController.m; sourceTree = "<group>"; };
+		FA73145F2507713700A2B96B /* userDataJson.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = userDataJson.plist; sourceTree = "<group>"; };
+		FA75315225024FDB008AFCD2 /* MLNAutoFillViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MLNAutoFillViewController.m; sourceTree = "<group>"; };
+		FA75315425024FDB008AFCD2 /* ScoreList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ScoreList.plist; sourceTree = "<group>"; };
+		FA75315525024FDB008AFCD2 /* MLNAutoFillViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MLNAutoFillViewController.h; sourceTree = "<group>"; };
 		FA906F9E24EBC8D500F8DAE2 /* MLNUICustomHotReloadViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLNUICustomHotReloadViewController.h; sourceTree = "<group>"; };
 		FA906F9F24EBC8D500F8DAE2 /* MLNUICustomHotReloadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLNUICustomHotReloadViewController.m; sourceTree = "<group>"; };
 		FA906FA224EBCAB700F8DAE2 /* MLNUITestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLNUITestModel.h; sourceTree = "<group>"; };
 		FA906FA324EBCAB700F8DAE2 /* MLNUITestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLNUITestModel.m; sourceTree = "<group>"; };
 		FAE72F1525106DA00092E87D /* ArgoBindingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArgoBindingTest.m; sourceTree = "<group>"; };
+		FAE879382519D30E00196913 /* MDVChatMovieSearchPageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDVChatMovieSearchPageModel.m; sourceTree = "<group>"; };
+		FAE879392519D30E00196913 /* MDVChatMovieSearchPageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDVChatMovieSearchPageModel.h; sourceTree = "<group>"; };
+		FAE8793A2519D30E00196913 /* ScoreListArgoUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ScoreListArgoUI.bundle; sourceTree = "<group>"; };
+		FAE879D4251A109900196913 /* highlight_detailArgoUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = highlight_detailArgoUI.bundle; sourceTree = "<group>"; };
+		FAE879D6251A109900196913 /* HighlightModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighlightModel.m; sourceTree = "<group>"; };
+		FAE879D7251A109900196913 /* HighlightModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighlightModel.h; sourceTree = "<group>"; };
 		FAE9C59223A250CD002C830D /* gallery.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = gallery.bundle; sourceTree = "<group>"; };
 		FAE9C59423A2529C002C830D /* inner_demo.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = inner_demo.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -556,6 +612,7 @@
 		00E911C924E2B8B9006614C4 /* ArgoUIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FA64B632250F16D30050ECDE /* InstagramTableView */,
 				00E9132724E53B24006614C4 /* KuaNative */,
 				00E9130824E5180B006614C4 /* Kua */,
 				00E9130624E517C9006614C4 /* ViewPager */,
@@ -695,6 +752,7 @@
 				00A0C997243C180500F0D003 /* MLNPerformanceTestController.h */,
 				00A0C998243C180500F0D003 /* MLNPerformanceTestController.m */,
 				FA4103C425090265007ADC8F /* iOSDemo */,
+				FA75314D25024FDB008AFCD2 /* AutoFill */,
 				00E911C924E2B8B9006614C4 /* ArgoUIDemo */,
 				FAE9C59723A2603F002C830D /* Handler */,
 				FAE9C59623A2600B002C830D /* BridgeTest */,
@@ -1057,6 +1115,123 @@
 			path = BottomCell;
 			sourceTree = "<group>";
 		};
+		FA64B632250F16D30050ECDE /* InstagramTableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InstagramTableView;
+			sourceTree = "<group>";
+		};
+		FA731422250619E500A2B96B /* SloganView */ = {
+			isa = PBXGroup;
+			children = (
+				FA731432250619E500A2B96B /* LRQSloganViewArgoUI.bundle */,
+				FA731424250619E500A2B96B /* LRQSloganViewArgoUI */,
+				FA731423250619E500A2B96B /* MLNSloganViewController.h */,
+				FA731433250619E500A2B96B /* MLNSloganViewController.m */,
+			);
+			path = SloganView;
+			sourceTree = "<group>";
+		};
+		FA731424250619E500A2B96B /* LRQSloganViewArgoUI */ = {
+			isa = PBXGroup;
+			children = (
+				FA731425250619E500A2B96B /* ViewModel */,
+			);
+			path = LRQSloganViewArgoUI;
+			sourceTree = "<group>";
+		};
+		FA731425250619E500A2B96B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA731426250619E500A2B96B /* SloganColdModel.h */,
+				FA731427250619E500A2B96B /* HeadlineModel.m */,
+				FA731428250619E500A2B96B /* TitleModel.h */,
+				FA731429250619E500A2B96B /* SloganModel.h */,
+				FA73142A250619E500A2B96B /* SubtitleModel.m */,
+				FA73142B250619E500A2B96B /* SloganHotModel.h */,
+				FA73142C250619E500A2B96B /* HeadlineModel.h */,
+				FA73142D250619E500A2B96B /* SloganColdModel.m */,
+				FA73142E250619E500A2B96B /* TitleModel.m */,
+				FA73142F250619E500A2B96B /* SloganModel.m */,
+				FA731430250619E500A2B96B /* SloganHotModel.m */,
+				FA731431250619E500A2B96B /* SubtitleModel.h */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA73143C25067FBB00A2B96B /* LRQElectView */ = {
+			isa = PBXGroup;
+			children = (
+				FA73143E25067FD900A2B96B /* LRQElectViewArgoUI.bundle */,
+				FA73143D25067FD900A2B96B /* ViewModel */,
+			);
+			path = LRQElectView;
+			sourceTree = "<group>";
+		};
+		FA73143D25067FD900A2B96B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA731445250728D500A2B96B /* ElectLabelModel.h */,
+				FA731444250728D500A2B96B /* ElectLabelModel.m */,
+				FA731446250728D600A2B96B /* ElectModel.h */,
+				FA73144B250728D600A2B96B /* ElectModel.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA73145125076FF400A2B96B /* KuaDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FA73145F2507713700A2B96B /* userDataJson.plist */,
+				FA7314522507700A00A2B96B /* kuaDetailArgoUI */,
+				FA73145C2507701800A2B96B /* MLNAutoFillKuaViewController.h */,
+				FA73145D2507701800A2B96B /* MLNAutoFillKuaViewController.m */,
+			);
+			path = KuaDetail;
+			sourceTree = "<group>";
+		};
+		FA7314522507700A00A2B96B /* kuaDetailArgoUI */ = {
+			isa = PBXGroup;
+			children = (
+				FA7314532507700A00A2B96B /* ViewModel */,
+				FA7314582507700A00A2B96B /* kuaDetailArgoUI.bundle */,
+			);
+			path = kuaDetailArgoUI;
+			sourceTree = "<group>";
+		};
+		FA7314532507700A00A2B96B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FA7314542507700A00A2B96B /* LrqUserData.m */,
+				FA7314572507700A00A2B96B /* LrqUserData.h */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FA75314D25024FDB008AFCD2 /* AutoFill */ = {
+			isa = PBXGroup;
+			children = (
+				FAE879D3251A109900196913 /* highlight_detailArgoUI */,
+				FAE879362519D30E00196913 /* ScoreListArgoUI */,
+				FA73145125076FF400A2B96B /* KuaDetail */,
+				FA73143C25067FBB00A2B96B /* LRQElectView */,
+				FA731422250619E500A2B96B /* SloganView */,
+				FA75315325024FDB008AFCD2 /* resource */,
+				FA75315525024FDB008AFCD2 /* MLNAutoFillViewController.h */,
+				FA75315225024FDB008AFCD2 /* MLNAutoFillViewController.m */,
+			);
+			path = AutoFill;
+			sourceTree = "<group>";
+		};
+		FA75315325024FDB008AFCD2 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				FA75315425024FDB008AFCD2 /* ScoreList.plist */,
+			);
+			path = resource;
+			sourceTree = "<group>";
+		};
 		FA906FA124EBC8E000F8DAE2 /* CustomHotReload */ = {
 			isa = PBXGroup;
 			children = (
@@ -1080,6 +1255,42 @@
 			);
 			name = Message;
 			path = Gui/Message;
+			sourceTree = "<group>";
+		};
+		FAE879362519D30E00196913 /* ScoreListArgoUI */ = {
+			isa = PBXGroup;
+			children = (
+				FAE879372519D30E00196913 /* ViewModel */,
+				FAE8793A2519D30E00196913 /* ScoreListArgoUI.bundle */,
+			);
+			path = ScoreListArgoUI;
+			sourceTree = "<group>";
+		};
+		FAE879372519D30E00196913 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAE879382519D30E00196913 /* MDVChatMovieSearchPageModel.m */,
+				FAE879392519D30E00196913 /* MDVChatMovieSearchPageModel.h */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FAE879D3251A109900196913 /* highlight_detailArgoUI */ = {
+			isa = PBXGroup;
+			children = (
+				FAE879D4251A109900196913 /* highlight_detailArgoUI.bundle */,
+				FAE879D5251A109900196913 /* ViewModel */,
+			);
+			path = highlight_detailArgoUI;
+			sourceTree = "<group>";
+		};
+		FAE879D5251A109900196913 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAE879D6251A109900196913 /* HighlightModel.m */,
+				FAE879D7251A109900196913 /* HighlightModel.h */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		FAE9C59623A2600B002C830D /* BridgeTest */ = {
@@ -1238,15 +1449,22 @@
 				00E9132C24E53E46006614C4 /* KuaCell.xib in Resources */,
 				FAE9C59323A250CD002C830D /* gallery.bundle in Resources */,
 				FA4103E725090347007ADC8F /* data.plist in Resources */,
+				FA75315925024FDB008AFCD2 /* ScoreList.plist in Resources */,
 				30CB3BFB23684CD400AB90C6 /* MLN.podspec in Resources */,
 				30CB3BF923684B7F00AB90C6 /* MLNDevTool.podspec in Resources */,
 				00E9131524E51837006614C4 /* ViewPagerDemoMUI.bundle in Resources */,
+				FAE879D8251A109900196913 /* highlight_detailArgoUI.bundle in Resources */,
+				FA73143A250619E500A2B96B /* LRQSloganViewArgoUI.bundle in Resources */,
 				000B3BDF2505D753001142E2 /* KuaDemoMUI.bundle in Resources */,
 				008CA3C124F3D43400C4F76F /* KuaDemoMUI2.bundle in Resources */,
 				FA383456239A6357000F900E /* Main.storyboard in Resources */,
+				FAE8793C2519D30E00196913 /* ScoreListArgoUI.bundle in Resources */,
+				FA73143F25067FD900A2B96B /* LRQElectViewArgoUI.bundle in Resources */,
 				00D5986B24B8732F00EA1660 /* PerformanceDemoMUI.bundle in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				FA7314602507713800A2B96B /* userDataJson.plist in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				FA73145B2507700B00A2B96B /* kuaDetailArgoUI.bundle in Resources */,
 				007FC90E250630B1000A8E92 /* HomePageArgoUI.bundle in Resources */,
 				FAE9C59523A2529C002C830D /* inner_demo.bundle in Resources */,
 			);
@@ -1329,9 +1547,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA731435250619E500A2B96B /* SubtitleModel.m in Sources */,
 				B27F65D92377AAC400F2D341 /* MLNHomeTableViewCell.m in Sources */,
 				00268A4124B7011500D8C617 /* EYLogViewer.m in Sources */,
 				0026755324B3514900D8C617 /* MLNUIDB.m in Sources */,
+				FA731450250728D600A2B96B /* ElectModel.m in Sources */,
 				B27F65B12377AA9700F2D341 /* MLNDiscoverTagView.m in Sources */,
 				30A4EB5A231CC5CD00995416 /* MLNMyHttpHandler.m in Sources */,
 				B27F65C72377AAAE00F2D341 /* MLNGalleryMessageDescCellModel.m in Sources */,
@@ -1349,6 +1569,7 @@
 				00E9132224E519B3006614C4 /* CellModelItem.m in Sources */,
 				B2DD3E60237990E9002AB6AD /* MLNActionItem.m in Sources */,
 				00E9132624E51CC3006614C4 /* MLNViewPagerDemo.m in Sources */,
+				FA731434250619E500A2B96B /* HeadlineModel.m in Sources */,
 				6003F59E195388D20070C39A /* MLNAppDelegate.m in Sources */,
 				00E9131724E51837006614C4 /* HomeDataPageModels.m in Sources */,
 				FA4103E625090347007ADC8F /* DemoLiyifengTableViewHeaderCell.m in Sources */,
@@ -1356,9 +1577,12 @@
 				B27F65DD2377AB0700F2D341 /* MLNGalleryNavigationBar.m in Sources */,
 				B29500F72372D5B400F48F09 /* MLNSimpleViewPagerCell.m in Sources */,
 				B29500D92372627000F48F09 /* MLNNativeTabSegmentScrollHandler.m in Sources */,
+				FA731438250619E500A2B96B /* SloganModel.m in Sources */,
+				FA73145E2507701800A2B96B /* MLNAutoFillKuaViewController.m in Sources */,
 				B27F65AE2377AA9700F2D341 /* MLNDiscoverInspirCategoryView.m in Sources */,
 				B27F65AB2377AA9700F2D341 /* MLNDiscoverAlbumDetailCell.m in Sources */,
 				B27F65AA2377AA9700F2D341 /* MLNDiscoverAlbumDetailViewController.m in Sources */,
+				FA75315825024FDB008AFCD2 /* MLNAutoFillViewController.m in Sources */,
 				00D5986724B8277300EA1660 /* GoodsData.m in Sources */,
 				FA4EE3072379095700449250 /* MLNGalleryMineBottomPageBaseCell.m in Sources */,
 				FA4EE313237917E500449250 /* MLNGalleryMinePageCellCollectCell.m in Sources */,
@@ -1373,6 +1597,7 @@
 				00D5986E24B8766C00EA1660 /* MLNBindTestLayoutController.m in Sources */,
 				007F89E7246C0D8400FF50F1 /* MLNBindTestCaseModel.m in Sources */,
 				B27F65AC2377AA9700F2D341 /* MLNNativeWaterfallHeaderView.m in Sources */,
+				FA7314592507700B00A2B96B /* LrqUserData.m in Sources */,
 				00E9132A24E53B41006614C4 /* MLNKuaController_Native.m in Sources */,
 				A4C3142624C7DE2700444CA4 /* MLNGlobalTimeTest.m in Sources */,
 				30A4EB60231CD75200995416 /* MLNMyRefreshHandler.m in Sources */,
@@ -1396,6 +1621,7 @@
 				00A45F7624850C35001A07D9 /* MLNUIBridge.m in Sources */,
 				00E911CC24E2B8EC006614C4 /* MLNKuaController.m in Sources */,
 				B29500B72371A3ED00F48F09 /* MLNGalleryMainViewController.m in Sources */,
+				FAE8793B2519D30E00196913 /* MDVChatMovieSearchPageModel.m in Sources */,
 				FA906FA024EBC8D500F8DAE2 /* MLNUICustomHotReloadViewController.m in Sources */,
 				FA4103E825090347007ADC8F /* DemoLiyifengModel.m in Sources */,
 				00E6526B2420AD1800A878B8 /* MLNBindModelViewController.m in Sources */,
@@ -1420,15 +1646,21 @@
 				B27F65AF2377AA9700F2D341 /* MLNNativeWaterfallLayout.m in Sources */,
 				00C1E9492477732E000DB89A /* MLNDataBindOperator.m in Sources */,
 				B27F65AD2377AA9700F2D341 /* MLNNativeWaterfallView.m in Sources */,
+				FA73144D250728D600A2B96B /* ElectLabelModel.m in Sources */,
 				B27F65A92377AA9700F2D341 /* MLNNativeWaterfallViewCell.m in Sources */,
 				B29500D82372627000F48F09 /* MLNNativeBadgeView.m in Sources */,
 				B27F65CB2377AAAE00F2D341 /* MLNGalleryMessageDescCell.m in Sources */,
 				B2DD3E5D237990E9002AB6AD /* MLNLuaPageViewController.m in Sources */,
 				B27F65922377AA6C00F2D341 /* MLNGalleryInfoNumberView.m in Sources */,
 				B27F65C82377AAAE00F2D341 /* MLNGalleryMessageViewController.m in Sources */,
+				FA731437250619E500A2B96B /* TitleModel.m in Sources */,
+				FA73143B250619E500A2B96B /* MLNSloganViewController.m in Sources */,
 				FA4EE310237909BC00449250 /* MLNGalleryMineBottomPageCollectCell.m in Sources */,
 				B27F65912377AA6C00F2D341 /* MLNGalleryMineViewController.m in Sources */,
+				FAE879D9251A109900196913 /* HighlightModel.m in Sources */,
 				B27F65CA2377AAAE00F2D341 /* MLNGalleryMessageBaseCell.m in Sources */,
+				FA731436250619E500A2B96B /* SloganColdModel.m in Sources */,
+				FA731439250619E500A2B96B /* SloganHotModel.m in Sources */,
 				00A312E024EFB4A80043A164 /* MLNUITestBridgeModel.m in Sources */,
 				B2DD3E5F237990E9002AB6AD /* MLNPackageManager.m in Sources */,
 				B27F65E12377AB1600F2D341 /* MLNGalleryPlusViewController.m in Sources */,
@@ -1719,6 +1951,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1731,7 +1964,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = E5SS7YSZ2F;
+				DEVELOPMENT_TEAM = B5G9R9WR6W;
 				ENABLE_BITCODE = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MLN/MLN-Prefix.pch";
@@ -1784,10 +2017,11 @@
 					"\"UIKit\"",
 					"-v",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.MMILua-Example2";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.MMILua-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

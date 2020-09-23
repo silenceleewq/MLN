@@ -29,8 +29,8 @@ local function initAdapter()
 
     adapter:initCellByReuseId("cell", function(cell)
         cell.rowContainer = HStack():widthPercent(100)
-                                  :heightPercent(100)
-                                  :mainAxis(MainAxis.CENTER)
+                                    :heightPercent(100)
+                                    :mainAxis(MainAxis.CENTER)
         cell.iv = ImageView():width(375):height(375)
                              :contentMode(ContentMode.SCALE_TO_FILL)
                              :crossSelf(CrossAxis.CENTER)
@@ -38,10 +38,38 @@ local function initAdapter()
 
         cell.contentView:addView(cell.rowContainer)
 
-        cell.active = InteractiveBehavior(InteractiveType.GESTURE)
-                :targetView(cell.iv)
-        cell.active:followEnable(true)
-              :enable(true)
+
+        cell.contentView:touchBegin(function(x, y)
+                print("contentView:touchBegin = ", x, y)
+        end)
+        cell.rowContainer:enabled(true)
+        cell.rowContainer:touchBegin(function(x, y)
+            print("rowContainer:touchBegin = ", x, y)
+        end)
+
+        cell.iv:enabled(true)
+        cell.iv:touchBegin(function(x, y)
+                print("iv:touchBegin = ", x, y)
+        end)
+
+        --cell.active = InteractiveBehavior(InteractiveType.GESTURE)
+        --        :targetView(cell.iv)q
+        --cell.active:followEnable(true)
+        --    :enable(true)
+        --cell.pinch = PinchGestureRecognizer()
+        --print("cell.iv = ", cell.iv)
+        --cell.pinch:attachView(cell.iv)
+        --cell.pinch:setPinchCallback(function(scale)
+        --    -- body
+        --    print("------------- scale = ", scale)
+        --end)
+        --≤
+        --cell.iv:onTouch(function(x, y)
+        --    print("-------------- onTouch = ", x, y)
+        --end)
+        --cell.iv:onClick(function()
+        --    print("-------------- onclick")
+        --end)
     end)
 
     adapter:fillCellDataByReuseId("cell", function(cell, section, row)
@@ -51,6 +79,13 @@ local function initAdapter()
     adapter:selectedRowByReuseId("cell", function(cell, section, row)
         print("点击了：" .. tostring(row))
     end)
+
+    --local pinch = PinchGestureRecognizer()
+    --pinch:attachView(label2)
+    --pinch:setPinchCallback(function(scale)
+    --    -- body
+    --    print("------------- scale = ", scale)
+    --end)
 
     return adapter
 end

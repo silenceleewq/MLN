@@ -16,6 +16,7 @@
 #import "MLNUISnapshotManager.h"
 #import "MLNUICanvasAnimation.h"
 #import "MLNUIKitInstanceHandlersManager.h"
+#import "MLNUITransform.h"
 
 #define kMLNUIDefaultRippleColor [UIColor colorWithRed:247/255.0 green:246/255.0 blue:244/255.0 alpha:1.0]
 
@@ -1023,6 +1024,13 @@ static const void *kLuaOnDetachedFromWindowCallback = &kLuaOnDetachedFromWindowC
         myTransform.transform = CGAffineTransformScale(myTransform.transform, sx, sy);
     }
 }
+
+//- (MLNUITransform *)luaui_getTransform {
+//    MLNUITransform *transform = [MLNUITransform new];
+//    transform.tx = self.transform.tx;
+//    transform.ty = self.transform.ty;
+//
+//}
 
 - (void)luaui_translation:(CGFloat)tx ty:(CGFloat)ty notNeedAdding:(NSNumber *)notNeedAdding
 {

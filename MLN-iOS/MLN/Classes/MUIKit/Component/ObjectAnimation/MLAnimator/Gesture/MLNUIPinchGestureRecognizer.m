@@ -34,6 +34,7 @@
 
 - (void)setAttachView:(UIView *)attachView {
     _attachView = attachView;
+    _attachView.userInteractionEnabled = YES;
     [_attachView addGestureRecognizer:_pinchGestureRecognizer];
 }
 
