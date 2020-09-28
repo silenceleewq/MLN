@@ -45,7 +45,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Gesture
 @property (nonatomic, strong) MLNUIBlock * mlnui_tapClickBlock;
-@property (nonatomic, strong) MLNUIBlock * argo_scaleBeganBlock;
+@property (nonatomic, strong) MLNUIBlock * argo_scaleBeginBlock;
 @property (nonatomic, strong) MLNUIBlock * argo_scalingBlock;
 @property (nonatomic, strong) MLNUIBlock * argo_scaleEndBlock;
 @property (nonatomic, strong) MLNUIBlock * mlnui_touchClickBlock;

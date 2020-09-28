@@ -1825,6 +1825,8 @@
 		FAE099C5251DDF7E00BD7C71 /* UIButton+MLNUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE099C3251DDF7E00BD7C71 /* UIButton+MLNUIKit.m */; };
 		FAE099FA25207E2F00BD7C71 /* UITableView+MLNUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE099F825207E2F00BD7C71 /* UITableView+MLNUIKit.h */; };
 		FAE099FB25207E2F00BD7C71 /* UITableView+MLNUIKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE099F925207E2F00BD7C71 /* UITableView+MLNUIKit.m */; };
+		FAE09A872521E74E00BD7C71 /* MLNUIGestureUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = FAE09A852521E74E00BD7C71 /* MLNUIGestureUtil.h */; };
+		FAE09A882521E74E00BD7C71 /* MLNUIGestureUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE09A862521E74E00BD7C71 /* MLNUIGestureUtil.m */; };
 		FAEB11A64280E5FFDEA6B595E3683280 /* SDImageFrame.h in Headers */ = {isa = PBXBuildFile; fileRef = 91A9B8C84F161E6C2FF964F639FA60D9 /* SDImageFrame.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FB03DF0242C67BB78EBA1B7B6AB954C0 /* MLNUIPerformanceHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = AD686772511F4F86A8A0E1B9C60D28AC /* MLNUIPerformanceHeader.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FB2916859D625EFF5F3119A058CA7C4C /* mln_timeout.h in Headers */ = {isa = PBXBuildFile; fileRef = 5016000AFF19A62D42DCEF175DBF2947 /* mln_timeout.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -3899,6 +3901,8 @@
 		FAE099C3251DDF7E00BD7C71 /* UIButton+MLNUIKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+MLNUIKit.m"; sourceTree = "<group>"; };
 		FAE099F825207E2F00BD7C71 /* UITableView+MLNUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UITableView+MLNUIKit.h"; path = "../../MUICore/Category/UITableView+MLNUIKit.h"; sourceTree = "<group>"; };
 		FAE099F925207E2F00BD7C71 /* UITableView+MLNUIKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UITableView+MLNUIKit.m"; path = "../../MUICore/Category/UITableView+MLNUIKit.m"; sourceTree = "<group>"; };
+		FAE09A852521E74E00BD7C71 /* MLNUIGestureUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MLNUIGestureUtil.h; sourceTree = "<group>"; };
+		FAE09A862521E74E00BD7C71 /* MLNUIGestureUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MLNUIGestureUtil.m; sourceTree = "<group>"; };
 		FAF6DB6E441B9D0EBD8307BED85ABB28 /* MLNUIInternalTextField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MLNUIInternalTextField.h; sourceTree = "<group>"; };
 		FB1356E8C37D814EAFC0322943CEE505 /* FLEXArgumentInputNotSupportedView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FLEXArgumentInputNotSupportedView.h; path = Classes/Editing/ArgumentInputViews/FLEXArgumentInputNotSupportedView.h; sourceTree = "<group>"; };
 		FB273B3EF3F9DE174B412851CCD97BB1 /* MLNKiConvertor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MLNKiConvertor.h; sourceTree = "<group>"; };
@@ -7545,6 +7549,8 @@
 				356DFC49317289C4B54D74E20F9D4839 /* MLNUISystem.m */,
 				4C6D25671011164262E083745E47686E /* MLNUITypeUtil.h */,
 				5702F958A82DCFBFE13237250BA49EFF /* MLNUITypeUtil.m */,
+				FAE09A852521E74E00BD7C71 /* MLNUIGestureUtil.h */,
+				FAE09A862521E74E00BD7C71 /* MLNUIGestureUtil.m */,
 				BA884F0EBA9174A4929835AF73D65846 /* Mmoslib */,
 				A15768489FEAD6C40DF7BC12DF364C0B /* Navigator */,
 				C31F75775AE685E2C30EB591863B7C00 /* Network */,
@@ -8409,6 +8415,7 @@
 				95F300C70C011306710016E93B91193D /* MLNUILuaCore.h in Headers */,
 				2E8C6AD7202914C2C5CC8089BB8BDE12 /* MLNUILuaCoreDelegate.h in Headers */,
 				8EAA827A2582A8F68FFAEEA2F6C10A84 /* MLNUILuaTable.h in Headers */,
+				FAE09A872521E74E00BD7C71 /* MLNUIGestureUtil.h in Headers */,
 				CBB1E0390816A984D2AA787BB2AF5A9F /* MLNUIMainRunLoopObserver.h in Headers */,
 				260B68946993AE023500CCB69FFA15C5 /* MLNUIMetamacros.h in Headers */,
 				ED32E24AF28627756241E1E713B4EF7E /* MLNUIModelHandler.h in Headers */,
@@ -9838,6 +9845,7 @@
 				4AF484983815FF3F58574C51F8F6DA04 /* MLNUIButton.m in Sources */,
 				6D006DB286CB1C2FF30CCF27E2383A89 /* MLNUICanvasAnimation.m in Sources */,
 				0F6C795F9F658C9AA80049547095FBBF /* MLNUICanvasAnimationDelegate.m in Sources */,
+				FAE09A882521E74E00BD7C71 /* MLNUIGestureUtil.m in Sources */,
 				2800CD526E7A5AFDD5A6B44C91BDAEEF /* MLNUICanvasConst.m in Sources */,
 				4B4F7E77DC6760185563391C3F70D4F3 /* MLNUICanvasPaint.m in Sources */,
 				AF8A482EA1A63F345022D428B1864077 /* MLNUICanvasPath.m in Sources */,

@@ -153,7 +153,7 @@ LUAUI_EXPORT_VIEW_METHOD(setGradientColorWithDirection, "luaui_setGradientColor:
 // user interaction
 LUAUI_EXPORT_VIEW_PROPERTY(enabled, "setLuaui_enable:","luaui_enable", MLNUIView)
 LUAUI_EXPORT_VIEW_METHOD(onClick, "luaui_addClick:",MLNUIView)
-LUAUI_EXPORT_VIEW_METHOD(scaleBegin, "argo_addScaleBeganCallback:",MLNUIView)
+LUAUI_EXPORT_VIEW_METHOD(scaleBegin, "argo_addScaleBeginCallback:",MLNUIView)
 LUAUI_EXPORT_VIEW_METHOD(scaling, "argo_addScalingCallback:",MLNUIView)
 LUAUI_EXPORT_VIEW_METHOD(scaleEnd, "argo_addScaleEndCallback:",MLNUIView)
 LUAUI_EXPORT_VIEW_METHOD(onLongPress, "luaui_addLongPress:",MLNUIView)

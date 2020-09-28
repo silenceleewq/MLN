@@ -734,10 +734,10 @@ static const void *kLuaDispatch = &kLuaDispatch;
 }
 
 // android 上的捏合手势叫做 scale 
-- (void)argo_addScaleBeganCallback:(MLNUIBlock *)argo_scaleBeganBlock {
+- (void)argo_addScaleBeginCallback:(MLNUIBlock *)argo_scaleBeginBlock {
     MLNUIMarkViewNeedRender;
     [self argo_in_addPinchGestureIfNeed];
-    self.argo_scaleBeganBlock = argo_scaleBeganBlock;
+    self.argo_scaleBeginBlock = argo_scaleBeginBlock;
 }
 
 - (void)argo_addScalingCallback:(MLNUIBlock *)argo_scalingBlock {
@@ -771,52 +771,29 @@ static const void *kLuaDispatch = &kLuaDispatch;
     switch (gesture.state) {
 
         case UIGestureRecognizerStateBegan:
-            
-            if (self.argo_scaleBeganBlock) {
-                CGPoint point = [gesture locationInView:self];
-                [self.argo_scaleBeganBlock addFloatArgument:gesture.scale];
-                [self.argo_scaleBeganBlock addFloatArgument:point.x];
-                [self.argo_scaleBeganBlock addFloatArgument:point.y];
-                [self.argo_scaleBeganBlock callIfCan];
-                NSLog(@"UIGestureRecognizerStateBegan");
-            }
+            [self runScaleCallback:self.argo_scaleBeginBlock gestureRecognizer:gesture];
             break;
 
         case UIGestureRecognizerStateChanged:
-            
-            if (gesture.numberOfTouches == 2 && self.argo_scalingBlock) {
-                CGPoint point  = [gesture locationInView:self];
-                [self.argo_scalingBlock addFloatArgument:gesture.scale];
-                [self.argo_scalingBlock addFloatArgument:point.x];
-                [self.argo_scalingBlock addFloatArgument:point.y];
-                [self.argo_scalingBlock callIfCan];
-                NSLog(@"UIGestureRecognizerStateChanged");
-            }
+            [self runScaleCallback:self.argo_scalingBlock gestureRecognizer:gesture];
             break;
 
         case UIGestureRecognizerStateEnded:
         case UIGestureRecognizerStateCancelled:
-            if (self.argo_scaleEndBlock) {
-                CGPoint point  = [gesture locationInView:self];
-                [self.argo_scaleEndBlock addFloatArgument:gesture.scale];
-                [self.argo_scaleEndBlock addFloatArgument:point.x];
-                [self.argo_scaleEndBlock addFloatArgument:point.y];
-                [self.argo_scaleEndBlock callIfCan];
-                NSLog(@"UIGestureRecognizerStateCancelled | UIGestureRecognizerStateEnded");
-            }
+            [self runScaleCallback:self.argo_scaleEndBlock gestureRecognizer:gesture];
             break;
         default:
             break;
     }
 }
 
-static const void *kLuaScaleBeganBlock = &kLuaScaleBeganBlock;
-- (void)setArgo_scaleBeganBlock:(MLNUIBlock *)argo_scaleBeganBlock {
-    objc_setAssociatedObject(self, kLuaScaleBeganBlock, argo_scaleBeganBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+static const void *kLuaScaleBeginBlock = &kLuaScaleBeginBlock;
+- (void)setArgo_scaleBeginBlock:(MLNUIBlock *)argo_scaleBeginBlock {
+    objc_setAssociatedObject(self, kLuaScaleBeginBlock, argo_scaleBeginBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-- (MLNUIBlock *)argo_scaleBeganBlock {
-    return objc_getAssociatedObject(self, kLuaScaleBeganBlock);
+- (MLNUIBlock *)argo_scaleBeginBlock {
+    return objc_getAssociatedObject(self, kLuaScaleBeginBlock);
 }
 
 static const void *kLuaScalingBlock = &kLuaScalingBlock;
@@ -1011,6 +988,36 @@ static const void *kLuaOnDetachedFromWindowCallback = &kLuaOnDetachedFromWindowC
     resultTouch[@"timeStamp"] = @([NSDate date].timeIntervalSince1970);
     resultTouch[@"target"] = targetView;
     return resultTouch;
+}
+
+- (NSDictionary *)pinchResultWithGestureRecognizer:(UIPinchGestureRecognizer *)recognizer {
+    CGPoint location = [recognizer locationInView:recognizer.view];
+    CGPoint location0 = [recognizer locationOfTouch:0 inView:recognizer.view];
+    CGPoint location1 = [recognizer locationOfTouch:1 inView:recognizer.view];
+    CGFloat spanX = fabs(location0.x - location1.x);
+    CGFloat spanY = fabs(location0.y - location1.y);
+    CGFloat span = sqrt(pow(spanX, 2) + pow(spanY, 2));
+    
+    NSMutableDictionary *resultTouch = [[NSMutableDictionary alloc] initWithCapacity:6];
+    resultTouch[@"focusX"] = @(location.x);
+    resultTouch[@"focusY"] = @(location.y);
+    resultTouch[@"span"] = @(span);
+    resultTouch[@"spanX"] = @(spanX);
+    resultTouch[@"spanY"] = @(spanY);
+    resultTouch[@"factor"] = @(recognizer.scale);
+    
+    return resultTouch;
+}
+
+- (void)runScaleCallback:(MLNUIBlock *)callback gestureRecognizer:(UIPinchGestureRecognizer *)recognizer {
+    if (recognizer.numberOfTouches < 2 || !callback) {
+        return;
+    }
+    NSDictionary *result = [self pinchResultWithGestureRecognizer:recognizer];
+    for (id obj in result.allValues) {
+        [callback addFloatArgument:[obj floatValue]];
+    }
+    [callback callIfCan];
 }
 
 #pragma mark - Open Ripple
