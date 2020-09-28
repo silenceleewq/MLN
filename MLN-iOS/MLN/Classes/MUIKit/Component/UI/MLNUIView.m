@@ -11,6 +11,24 @@
 
 @implementation MLNUIView
 
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        // 适配Android多点触控时对每个手指的触控都会进行回调.
+        self.multipleTouchEnabled = YES;
+    }
+    return self;
+}
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        // 适配Android多点触控时对每个手指的触控都会进行回调.
+        self.multipleTouchEnabled = YES;
+    }
+    return self;
+}
+
 - (instancetype)initMLNUIViewWithMLNUILuaCore:(MLNUILuaCore *)luaCore {
     if (self = [super init]) {
         MLNUIError(luaCore, @"The View class is deprecated, please use HStack or VStack instead.")
@@ -30,6 +48,11 @@
     return YES;
 }
 
+- (BOOL)luaui_canPinch
+{
+    return YES;
+}
+
 - (BOOL)mlnui_layoutEnable
 {
     return YES;
@@ -38,6 +61,14 @@
 - (BOOL)luaui_isContainer
 {
     return YES;
+}
+
+#pragma mark - Responder Chain
+- (nullable UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    if (self.argo_notDispatch) {
+        return self;
+    }
+    return [super hitTest:point withEvent:event];
 }
 
 #pragma mark - Export For Lua
@@ -122,6 +153,9 @@ LUAUI_EXPORT_VIEW_METHOD(setGradientColorWithDirection, "luaui_setGradientColor:
 // user interaction
 LUAUI_EXPORT_VIEW_PROPERTY(enabled, "setLuaui_enable:","luaui_enable", MLNUIView)
 LUAUI_EXPORT_VIEW_METHOD(onClick, "luaui_addClick:",MLNUIView)
+LUAUI_EXPORT_VIEW_METHOD(scaleBegin, "argo_addScaleBeganCallback:",MLNUIView)
+LUAUI_EXPORT_VIEW_METHOD(scaling, "argo_addScalingCallback:",MLNUIView)
+LUAUI_EXPORT_VIEW_METHOD(scaleEnd, "argo_addScaleEndCallback:",MLNUIView)
 LUAUI_EXPORT_VIEW_METHOD(onLongPress, "luaui_addLongPress:",MLNUIView)
 LUAUI_EXPORT_VIEW_METHOD(onTouch, "luaui_addTouch:",MLNUIView)
 LUAUI_EXPORT_VIEW_METHOD(hasFocus, "isFirstResponder",MLNUIView)
@@ -136,6 +170,8 @@ LUAUI_EXPORT_VIEW_METHOD(touchBeginExtension, "luaui_setTouchesBeganExtensionCal
 LUAUI_EXPORT_VIEW_METHOD(touchMoveExtension, "luaui_setTouchesMovedExtensionCallback:",MLNUIView)
 LUAUI_EXPORT_VIEW_METHOD(touchEndExtension, "luaui_setTouchesEndedExtensionCallback:",MLNUIView)
 LUAUI_EXPORT_VIEW_METHOD(touchCancelExtension, "luaui_setTouchesCancelledExtensionCallback:",MLNUIView)
+// responder chain
+LUAUI_EXPORT_VIEW_PROPERTY(notDispatch, "setArgo_notDispatch:", "argo_notDispatch",MLNUIView)
 // transform
 LUAUI_EXPORT_VIEW_METHOD(anchorPoint, "luaui_anchorPoint:y:", MLNUIView)
 LUAUI_EXPORT_VIEW_METHOD(transform, "luaui_transform:adding:", MLNUIView)

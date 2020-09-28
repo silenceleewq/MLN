@@ -99,20 +99,30 @@ static const void *kLuaKeyboardDismiss = &kLuaKeyboardDismiss;
     }
     
     if (self.mlnui_touchesBeganCallback) {
-        UITouch *touch = [touches anyObject];
-        CGPoint point = [touch locationInView:self];
-        [self.mlnui_touchesBeganCallback addFloatArgument:point.x];
-        [self.mlnui_touchesBeganCallback addFloatArgument:point.y];
-        [self.mlnui_touchesBeganCallback callIfCan];
+        NSArray<UITouch *> *touchesArray = touches.allObjects;
+        for (NSInteger i = 0; i < touchesArray.count; ++i) {
+            UITouch *touch = touchesArray[i];
+            if (touch.view == self) {
+                CGPoint point  = [touch locationInView:self];
+                [self.mlnui_touchesBeganCallback addFloatArgument:point.x];
+                [self.mlnui_touchesBeganCallback addFloatArgument:point.y];
+                [self.mlnui_touchesBeganCallback callIfCan];
+            }
+        }
     }
-    
+
     if (self.mlnui_touchesBeganExtensionCallback) {
-        UITouch *touch = [touches anyObject];
-        CGPoint screenLocation = [touch locationInView:self.window];
-        CGPoint pageLocation = [touch locationInView:self];
-        NSDictionary *touchDict = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
-        [self.mlnui_touchesBeganExtensionCallback addObjArgument:[NSMutableDictionary dictionaryWithDictionary:touchDict]];
-        [self.mlnui_touchesBeganExtensionCallback callIfCan];
+        NSArray<UITouch *> *touchesArray = touches.allObjects;
+        for (NSInteger i = 0; i < touchesArray.count; ++i) {
+            UITouch *touch = touchesArray[i];
+            if (touch.view == self) {
+                CGPoint      screenLocation = [touch locationInView:self.window];
+                CGPoint      pageLocation   = [touch locationInView:self];
+                NSDictionary *touchDict     = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
+                [self.mlnui_touchesBeganExtensionCallback addObjArgument:[NSMutableDictionary dictionaryWithDictionary:touchDict]];
+                [self.mlnui_touchesBeganExtensionCallback callIfCan];
+            }
+        }
     }
 }
 
@@ -126,20 +136,30 @@ static const void *kLuaKeyboardDismiss = &kLuaKeyboardDismiss;
     [self mlnui_touchType:MLNUITouchType_Move touch:touches.anyObject event:event];
 
     if (self.mlnui_touchesMovedCallback) {
-        UITouch *touch = [touches anyObject];
-        CGPoint point = [touch locationInView:self];
-        [self.mlnui_touchesMovedCallback addFloatArgument:point.x];
-        [self.mlnui_touchesMovedCallback addFloatArgument:point.y];
-        [self.mlnui_touchesMovedCallback callIfCan];
+        NSArray<UITouch *> *touchesArray = touches.allObjects;
+        for (NSInteger i = 0; i < touchesArray.count; ++i) {
+            UITouch *touch = touchesArray[i];
+            if (touch.view == self) {
+                CGPoint point  = [touch locationInView:self];
+                [self.mlnui_touchesMovedCallback addFloatArgument:point.x];
+                [self.mlnui_touchesMovedCallback addFloatArgument:point.y];
+                [self.mlnui_touchesMovedCallback callIfCan];
+            }
+        }
     }
     
     if (self.mlnui_touchesMovedExtensionCallback) {
-        UITouch *touch = [touches anyObject];
-        CGPoint screenLocation = [touch locationInView:self.window];
-        CGPoint pageLocation = [touch locationInView:self];
-        NSDictionary *touchDict = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
-        [self.mlnui_touchesMovedExtensionCallback addObjArgument:touchDict.mutableCopy];
-        [self.mlnui_touchesMovedExtensionCallback callIfCan];
+        NSArray<UITouch *> *touchesArray = touches.allObjects;
+        for (NSInteger i = 0; i < touchesArray.count; ++i) {
+            UITouch *touch = touchesArray[i];
+            if (touch.view == self) {
+                CGPoint      screenLocation = [touch locationInView:self.window];
+                CGPoint      pageLocation   = [touch locationInView:self];
+                NSDictionary *touchDict     = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
+                [self.mlnui_touchesMovedExtensionCallback addObjArgument:touchDict.mutableCopy];
+                [self.mlnui_touchesMovedExtensionCallback callIfCan];
+            }
+        }
     }
 }
 
@@ -161,20 +181,30 @@ static const void *kLuaKeyboardDismiss = &kLuaKeyboardDismiss;
     }
     
     if (self.mlnui_touchesEndedCallback) {
-        UITouch *touch = [touches anyObject];
-        CGPoint point = [touch locationInView:self];
-        [self.mlnui_touchesEndedCallback addFloatArgument:point.x];
-        [self.mlnui_touchesEndedCallback addFloatArgument:point.y];
-        [self.mlnui_touchesEndedCallback callIfCan];
+        NSArray<UITouch *> *touchesArray = touches.allObjects;
+        for (NSInteger i = 0; i < touchesArray.count; ++i) {
+            UITouch *touch = touchesArray[i];
+            if (touch.view == self) {
+                CGPoint point  = [touch locationInView:self];
+                [self.mlnui_touchesEndedCallback addFloatArgument:point.x];
+                [self.mlnui_touchesEndedCallback addFloatArgument:point.y];
+                [self.mlnui_touchesEndedCallback callIfCan];
+            }
+        }
     }
-    
+
     if (self.mlnui_touchesEndedExtensionCallback) {
-        UITouch *touch = [touches anyObject];
-        CGPoint screenLocation = [touch locationInView:self.window];
-        CGPoint pageLocation = [touch locationInView:self];
-        NSDictionary *touchDict = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
-        [self.mlnui_touchesEndedExtensionCallback addObjArgument:touchDict.mutableCopy];
-        [self.mlnui_touchesEndedExtensionCallback callIfCan];
+        NSArray<UITouch *> *touchesArray = touches.allObjects;
+        for (NSInteger i = 0; i < touchesArray.count; ++i) {
+            UITouch *touch = touchesArray[i];
+            if (touch.view == self) {
+                CGPoint      screenLocation = [touch locationInView:self.window];
+                CGPoint      pageLocation   = [touch locationInView:self];
+                NSDictionary *touchDict     = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
+                [self.mlnui_touchesEndedExtensionCallback addObjArgument:touchDict.mutableCopy];
+                [self.mlnui_touchesEndedExtensionCallback callIfCan];
+            }
+        }
     }
 }
 
@@ -195,20 +225,30 @@ static const void *kLuaKeyboardDismiss = &kLuaKeyboardDismiss;
     }
     
     if (self.mlnui_touchesCancelledCallback) {
-        UITouch *touch = [touches anyObject];
-        CGPoint point = [touch locationInView:self];
-        [self.mlnui_touchesCancelledCallback addFloatArgument:point.x];
-        [self.mlnui_touchesCancelledCallback addFloatArgument:point.y];
-        [self.mlnui_touchesCancelledCallback callIfCan];
+        NSArray<UITouch *> *touchesArray = touches.allObjects;
+        for (NSInteger i = 0; i < touchesArray.count; ++i) {
+            UITouch *touch = touchesArray[i];
+            if (touch.view == self) {
+                CGPoint point  = [touch locationInView:self];
+                [self.mlnui_touchesEndedCallback addFloatArgument:point.x];
+                [self.mlnui_touchesEndedCallback addFloatArgument:point.y];
+                [self.mlnui_touchesEndedCallback callIfCan];
+            }
+        }
     }
     
     if (self.mlnui_touchesCancelledExtensionCallback) {
-        UITouch *touch = [touches anyObject];
-        CGPoint screenLocation = [touch locationInView:self.window];
-        CGPoint pageLocation = [touch locationInView:self];
-        NSDictionary *touchDict = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
-        [self.mlnui_touchesCancelledExtensionCallback addObjArgument:touchDict.mutableCopy];
-        [self.mlnui_touchesCancelledExtensionCallback callIfCan];
+        NSArray<UITouch *> *touchesArray = touches.allObjects;
+        for (NSInteger i = 0; i < touchesArray.count; ++i) {
+            UITouch *touch = touchesArray[i];
+            if (touch.view == self) {
+                CGPoint      screenLocation = [touch locationInView:self.window];
+                CGPoint      pageLocation   = [touch locationInView:self];
+                NSDictionary *touchDict     = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
+                [self.mlnui_touchesCancelledExtensionCallback addObjArgument:touchDict.mutableCopy];
+                [self.mlnui_touchesCancelledExtensionCallback callIfCan];
+            }
+        }
     }
 }
 
@@ -575,6 +615,16 @@ static const void *kLuaRenderContext = &kLuaRenderContext;
     self.mlnui_touchesCancelledExtensionCallback = callback;
 }
 
+#pragma mark - Responder Chain
+static const void *kLuaDispatch = &kLuaDispatch;
+- (void)setArgo_notDispatch:(BOOL)argo_notDispatch {
+    objc_setAssociatedObject(self, kLuaDispatch, @(argo_notDispatch), OBJC_ASSOCIATION_ASSIGN);
+}
+
+- (BOOL)argo_notDispatch {
+    return [objc_getAssociatedObject(self, kLuaDispatch) boolValue];
+}
+
 #pragma mark - Gesture
 - (BOOL)luaui_enable
 {
@@ -616,6 +666,7 @@ static const void *kLuaRenderContext = &kLuaRenderContext;
     UITapGestureRecognizer *gesture = [self mlnui_in_getClickGesture];
     if (!gesture && [self luaui_canClick]) {
         gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mlnui_in_tapClickAction:)];
+        gesture.cancelsTouchesInView = NO;
         [self addGestureRecognizer:gesture];
         [self mlnui_in_setClickGesture:gesture];
     }
@@ -680,6 +731,120 @@ static const void *kLuaRenderContext = &kLuaRenderContext;
         [self.mlnui_longPressBlock addFloatArgument:point.y];
         [self.mlnui_longPressBlock callIfCan];
     }
+}
+
+// android 上的捏合手势叫做 scale 
+- (void)argo_addScaleBeganCallback:(MLNUIBlock *)argo_scaleBeganBlock {
+    MLNUIMarkViewNeedRender;
+    [self argo_in_addPinchGestureIfNeed];
+    self.argo_scaleBeganBlock = argo_scaleBeganBlock;
+}
+
+- (void)argo_addScalingCallback:(MLNUIBlock *)argo_scalingBlock {
+    MLNUIMarkViewNeedRender;
+    [self argo_in_addPinchGestureIfNeed];
+    self.argo_scalingBlock = argo_scalingBlock;
+}
+
+- (void)argo_addScaleEndCallback:(MLNUIBlock *)argo_scaleEndBlock {
+    MLNUIMarkViewNeedRender;
+    [self argo_in_addPinchGestureIfNeed];
+    self.argo_scaleEndBlock = argo_scaleEndBlock;
+}
+
+
+- (void)argo_in_addPinchGestureIfNeed {
+    UIPinchGestureRecognizer *gesture = [self argo_in_getPinchGesture];
+    if (!gesture && [self luaui_canPinch]) {
+        gesture = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(argo_in_pinchAction:)];
+        [self addGestureRecognizer:gesture];
+        gesture.cancelsTouchesInView = NO;
+        [self argo_in_setPinchGesture:gesture];
+    }
+}
+
+- (void)argo_in_pinchAction:(UIPinchGestureRecognizer *)gesture {
+    if (!self.luaui_enable) {
+        return;
+    }
+
+    switch (gesture.state) {
+
+        case UIGestureRecognizerStateBegan:
+            
+            if (self.argo_scaleBeganBlock) {
+                CGPoint point = [gesture locationInView:self];
+                [self.argo_scaleBeganBlock addFloatArgument:gesture.scale];
+                [self.argo_scaleBeganBlock addFloatArgument:point.x];
+                [self.argo_scaleBeganBlock addFloatArgument:point.y];
+                [self.argo_scaleBeganBlock callIfCan];
+                NSLog(@"UIGestureRecognizerStateBegan");
+            }
+            break;
+
+        case UIGestureRecognizerStateChanged:
+            
+            if (gesture.numberOfTouches == 2 && self.argo_scalingBlock) {
+                CGPoint point  = [gesture locationInView:self];
+                [self.argo_scalingBlock addFloatArgument:gesture.scale];
+                [self.argo_scalingBlock addFloatArgument:point.x];
+                [self.argo_scalingBlock addFloatArgument:point.y];
+                [self.argo_scalingBlock callIfCan];
+                NSLog(@"UIGestureRecognizerStateChanged");
+            }
+            break;
+
+        case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateCancelled:
+            if (self.argo_scaleEndBlock) {
+                CGPoint point  = [gesture locationInView:self];
+                [self.argo_scaleEndBlock addFloatArgument:gesture.scale];
+                [self.argo_scaleEndBlock addFloatArgument:point.x];
+                [self.argo_scaleEndBlock addFloatArgument:point.y];
+                [self.argo_scaleEndBlock callIfCan];
+                NSLog(@"UIGestureRecognizerStateCancelled | UIGestureRecognizerStateEnded");
+            }
+            break;
+        default:
+            break;
+    }
+}
+
+static const void *kLuaScaleBeganBlock = &kLuaScaleBeganBlock;
+- (void)setArgo_scaleBeganBlock:(MLNUIBlock *)argo_scaleBeganBlock {
+    objc_setAssociatedObject(self, kLuaScaleBeganBlock, argo_scaleBeganBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (MLNUIBlock *)argo_scaleBeganBlock {
+    return objc_getAssociatedObject(self, kLuaScaleBeganBlock);
+}
+
+static const void *kLuaScalingBlock = &kLuaScalingBlock;
+- (void)setArgo_scalingBlock:(MLNUIBlock *)argo_scalingBlock {
+    objc_setAssociatedObject(self, kLuaScalingBlock, argo_scalingBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (MLNUIBlock *)argo_scalingBlock {
+    return objc_getAssociatedObject(self, kLuaScalingBlock);
+}
+
+static const void *kLuaScaleEndBlock = &kLuaScaleEndBlock;
+- (void)setArgo_scaleEndBlock:(MLNUIBlock *)argo_scaleEndBlock {
+    objc_setAssociatedObject(self, kLuaScaleEndBlock, argo_scaleEndBlock, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (MLNUIBlock *)argo_scaleEndBlock {
+    return objc_getAssociatedObject(self, kLuaScaleEndBlock);
+}
+
+static const void *kLuaPinchGesture = &kLuaPinchGesture;
+
+- (void)argo_in_setPinchGesture:(UIPinchGestureRecognizer *)gesture {
+    objc_setAssociatedObject(self, kLuaPinchGesture, gesture, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (UIPinchGestureRecognizer *)argo_in_getPinchGesture {
+    return objc_getAssociatedObject(self, kLuaPinchGesture);
 }
 
 static const void *kLuaClickGesture = &kLuaClickGesture;

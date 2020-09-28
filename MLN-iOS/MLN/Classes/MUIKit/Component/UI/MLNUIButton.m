@@ -33,17 +33,29 @@
 
 - (void)luaui_addClick:(MLNUIBlock *)clickCallback
 {
-    if (!self.mlnui_tapClickBlock) {
-        [self addTarget:self action:@selector(buttonCallBack) forControlEvents:UIControlEventTouchUpInside];
+    UITapGestureRecognizer *gesture = [self mlnui_in_getUIButtonClickGesture];
+    if (!gesture && !self.mlnui_tapClickBlock) {
+        gesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(mlnui_in_tapClickAction:)];
+        gesture.cancelsTouchesInView = NO;
+        [self addGestureRecognizer:gesture];
+        [self mlnui_in_setUIButtonClickGesture:gesture];
     }
     self.mlnui_tapClickBlock = clickCallback;
 }
 
-- (void)buttonCallBack
-{
+- (void)mlnui_in_tapClickAction:(UITapGestureRecognizer *)tap {
     if (self.mlnui_tapClickBlock) {
         [self.mlnui_tapClickBlock  callIfCan];
     }
+}
+
+static const void *kLuaButtonClickGesture = &kLuaButtonClickGesture;
+- (UITapGestureRecognizer *)mlnui_in_getUIButtonClickGesture {
+    return objc_getAssociatedObject(self, kLuaButtonClickGesture);
+}
+
+- (void)mlnui_in_setUIButtonClickGesture:(UITapGestureRecognizer *)tap {
+    objc_setAssociatedObject(self, kLuaButtonClickGesture, tap, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
 - (void)luaui_setImage:(NSString *)imageSrc press:(NSString *)press

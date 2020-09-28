@@ -24,6 +24,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) CGRect luaui_frame;
 @property (nonatomic, assign) BOOL luaui_enable;
 
+#pragma mark - Responder Chain
+@property (nonatomic, assign) BOOL argo_notDispatch;
+
 - (CGPoint)luaui_convertRelativePointToView:(UIView *)view point:(CGPoint)point;
 
 #pragma mark - TouchEvent
@@ -42,6 +45,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Gesture
 @property (nonatomic, strong) MLNUIBlock * mlnui_tapClickBlock;
+@property (nonatomic, strong) MLNUIBlock * argo_scaleBeganBlock;
+@property (nonatomic, strong) MLNUIBlock * argo_scalingBlock;
+@property (nonatomic, strong) MLNUIBlock * argo_scaleEndBlock;
 @property (nonatomic, strong) MLNUIBlock * mlnui_touchClickBlock;
 @property (nonatomic, strong) MLNUIBlock * mlnui_longPressBlock;
 
@@ -57,6 +63,11 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (BOOL)luaui_canLongPress;
 
+/**
+ Return YES if it can respond to pinch events. Default is NO
+ */
+- (BOOL)luaui_canPinch;
+
 - (void)mlnui_addTouchBlock:(MLNUITouchCallback)block;
 - (void)mlnui_removeTouchBlock:(MLNUITouchCallback)block;
 
@@ -65,6 +76,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)luaui_addCornerMaskWithRadius:(CGFloat)cornerRadius maskColor:(UIColor *)maskColor corners:(MLNUIRectCorner)corners;
 - (void)mlnui_updateCornersIfNeed;
 - (void)mlnui_updateGradientLayerIfNeed;
+
+#pragma mark - Utils
+- (NSDictionary *)touchResultWithScreenLocation:(CGPoint)screenLocation pageLocation:(CGPoint)pageLocation target:(UIView *)targetView;
 
 #pragma mark - Focus
 

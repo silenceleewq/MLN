@@ -153,5 +153,18 @@ static inline void MLNUILayoutNodeClearHeight(UIView *view) {
 }
 
 
+- (void)setLuaui_enable:(BOOL)luaui_enable
+{
+    self.userInteractionEnabled = luaui_enable;
+    UIView *superview = self.superview;
+    while (superview) {
+        if ( [superview isKindOfClass:[UITableViewCell class]] ||
+          [superview isKindOfClass:[UICollectionViewCell class]] ) {
+            superview.userInteractionEnabled = luaui_enable;
+            break;
+        }
+        superview = superview.superview;
+    }
+}
 
 @end

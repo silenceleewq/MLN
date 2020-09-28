@@ -437,6 +437,41 @@
     return _innerTableView;
 }
 
+#pragma mark - overide touche began/move/cancel
+ // luaui_setTouchesBeganCallback
+ - (void)luaui_setTouchesBeganCallback:(MLNUIBlock *)callback {
+     self.innerTableView.mlnui_touchesBeganCallback = callback;
+ }
+
+ - (void)luaui_setTouchesMovedCallback:(MLNUIBlock *)callback {
+     self.innerTableView.mlnui_touchesMovedCallback = callback;
+ }
+
+ - (void)luaui_setTouchesEndedCallback:(MLNUIBlock *)callback {
+     self.innerTableView.mlnui_touchesEndedCallback = callback;
+ }
+
+ - (void)luaui_setTouchesCancelledCallback:(MLNUIBlock *)callback {
+     self.innerTableView.mlnui_touchesCancelledCallback = callback;
+ }
+
+ - (void)luaui_setTouchesBeganExtensionCallback:(MLNUIBlock *)callback {
+     self.innerTableView.mlnui_touchesBeganExtensionCallback = callback;
+ }
+
+ - (void)luaui_setTouchesMovedExtensionCallback:(MLNUIBlock *)callback {
+     self.innerTableView.mlnui_touchesMovedExtensionCallback = callback;
+ }
+
+ - (void)luaui_setTouchesEndedExtensionCallback:(MLNUIBlock *)callback {
+     self.innerTableView.mlnui_touchesEndedExtensionCallback = callback;
+ }
+
+ - (void)luaui_setTouchesCancelledExtensionCallback:(MLNUIBlock *)callback {
+     self.innerTableView.mlnui_touchesCancelledExtensionCallback = callback;
+ }
+
+
 #pragma mark - MLNUIPaddingContainerViewProtocol
 
 - (UIView *)mlnui_contentView

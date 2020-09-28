@@ -32,6 +32,12 @@
 {
     if (self = [super initWithFrame:CGRectZero]) {
         _innerScrollView = [[MLNUIInnerScrollView alloc] initWithMLNUILuaCore:luaCore direction:[isHorizontal boolValue] requetLayoutHandler:[self requestLayoutHandler]];
+        NSArray <UIGestureRecognizer *>*array = [_innerScrollView gestureRecognizers];
+        for (UIGestureRecognizer *rec in array) {
+            rec.delaysTouchesBegan = NO;
+            rec.delaysTouchesEnded = NO;
+            rec.cancelsTouchesInView = NO;
+        }
         [super luaui_addSubview:_innerScrollView];
         _autoFitSize = NO;
     }
@@ -262,6 +268,45 @@
         }
     }
 }
+
+#pragma mark - overide touche began/move/cancel
+// luaui_setTouchesBeganCallback
+- (void)luaui_setTouchesBeganCallback:(MLNUIBlock *)callback {
+    self.innerScrollView.mlnui_contentView.mlnui_touchesBeganCallback = callback;
+}
+
+- (void)luaui_setTouchesMovedCallback:(MLNUIBlock *)callback {
+    self.innerScrollView.mlnui_contentView.mlnui_touchesMovedCallback = callback;
+}
+
+- (void)luaui_setTouchesEndedCallback:(MLNUIBlock *)callback {
+    self.innerScrollView.mlnui_contentView.mlnui_touchesEndedCallback = callback;
+}
+
+- (void)luaui_setTouchesCancelledCallback:(MLNUIBlock *)callback {
+    self.innerScrollView.mlnui_contentView.mlnui_touchesCancelledCallback = callback;
+}
+
+- (void)luaui_setTouchesBeganExtensionCallback:(MLNUIBlock *)callback {
+    // MLNUIMarkViewNeedRender;
+    self.innerScrollView.mlnui_contentView.mlnui_touchesBeganExtensionCallback = callback;
+}
+
+- (void)luaui_setTouchesMovedExtensionCallback:(MLNUIBlock *)callback {
+    // MLNUIMarkViewNeedRender;
+    self.innerScrollView.mlnui_contentView.mlnui_touchesMovedExtensionCallback = callback;
+}
+
+- (void)luaui_setTouchesEndedExtensionCallback:(MLNUIBlock *)callback {
+    // MLNUIMarkViewNeedRender;
+    self.innerScrollView.mlnui_contentView.mlnui_touchesEndedExtensionCallback = callback;
+}
+
+- (void)luaui_setTouchesCancelledExtensionCallback:(MLNUIBlock *)callback {
+    // MLNUIMarkViewNeedRender;
+    self.innerScrollView.mlnui_contentView.mlnui_touchesCancelledExtensionCallback = callback;
+}
+
 
 #pragma mark - Private
 

@@ -10,6 +10,19 @@
 
 @implementation MLNUIInnerTableView
 
+- (instancetype)initWithFrame:(CGRect)frame style:(UITableViewStyle)style {
+    self = [super initWithFrame:frame style:style];
+    if (self) {
+        NSArray <UIGestureRecognizer *>*array = [self gestureRecognizers];
+        for (UIGestureRecognizer *rec in array) {
+            rec.delaysTouchesBegan = NO;
+            rec.delaysTouchesEnded = NO;
+            rec.cancelsTouchesInView = NO;
+        }
+    }
+    return self;
+}
+
 - (BOOL)mlnui_isConvertible
 {
     return [self.containerView mlnui_isConvertible];

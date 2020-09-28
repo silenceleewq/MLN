@@ -46,6 +46,7 @@
         self.imageViewMode = MLNUIImageViewModeNone;
         self.clipsToBounds = YES;
         _enable = YES;
+        self.multipleTouchEnabled = YES;
     }
     return self;
 }
@@ -443,6 +444,10 @@
 
 - (BOOL)luaui_canLongPress
 {
+    return YES;
+}
+
+- (BOOL)luaui_canPinch {
     return YES;
 }
 
