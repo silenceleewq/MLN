@@ -10,6 +10,19 @@
 
 @implementation MLNUIInnerCollectionView
 
+- (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout {
+    self = [super initWithFrame:frame collectionViewLayout:layout];
+    if (self) {
+        NSArray <UIGestureRecognizer *>*array = [self gestureRecognizers];
+        for (UIGestureRecognizer *rec in array) {
+            rec.delaysTouchesBegan = NO;
+            rec.delaysTouchesEnded = NO;
+            rec.cancelsTouchesInView = NO;
+        }
+    }
+    return self;
+}
+
 - (BOOL)mlnui_isConvertible
 {
     return [self.containerView mlnui_isConvertible];

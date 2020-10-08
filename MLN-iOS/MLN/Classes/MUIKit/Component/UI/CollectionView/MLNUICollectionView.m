@@ -468,6 +468,40 @@
     }
 }
 
+#pragma mark - overide touche began/move/cancel
+// luaui_setTouchesBeganCallback
+- (void)luaui_setTouchesBeganCallback:(MLNUIBlock *)callback {
+    self.innerCollectionView.mlnui_touchesBeganCallback = callback;
+}
+
+- (void)luaui_setTouchesMovedCallback:(MLNUIBlock *)callback {
+    self.innerCollectionView.mlnui_touchesMovedCallback = callback;
+}
+
+- (void)luaui_setTouchesEndedCallback:(MLNUIBlock *)callback {
+    self.innerCollectionView.mlnui_touchesEndedCallback = callback;
+}
+
+- (void)luaui_setTouchesCancelledCallback:(MLNUIBlock *)callback {
+    self.innerCollectionView.mlnui_touchesCancelledCallback = callback;
+}
+
+- (void)luaui_setTouchesBeganExtensionCallback:(MLNUIBlock *)callback {
+    self.innerCollectionView.mlnui_touchesBeganExtensionCallback = callback;
+}
+
+- (void)luaui_setTouchesMovedExtensionCallback:(MLNUIBlock *)callback {
+    self.innerCollectionView.mlnui_touchesMovedExtensionCallback = callback;
+}
+
+- (void)luaui_setTouchesEndedExtensionCallback:(MLNUIBlock *)callback {
+    self.innerCollectionView.mlnui_touchesEndedExtensionCallback = callback;
+}
+
+- (void)luaui_setTouchesCancelledExtensionCallback:(MLNUIBlock *)callback {
+    self.innerCollectionView.mlnui_touchesCancelledExtensionCallback = callback;
+}
+
 #pragma mark - Getters
 
 - (UICollectionView *)innerCollectionView

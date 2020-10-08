@@ -434,6 +434,39 @@
     }
 }
 
+#pragma mark - overide touche began/move/cancel
+// luaui_setTouchesBeganCallback
+- (void)luaui_setTouchesBeganCallback:(MLNUIBlock *)callback {
+    self.innerWaterfallView.mlnui_touchesBeganCallback = callback;
+}
+
+- (void)luaui_setTouchesMovedCallback:(MLNUIBlock *)callback {
+    self.innerWaterfallView.mlnui_touchesMovedCallback = callback;
+}
+
+- (void)luaui_setTouchesEndedCallback:(MLNUIBlock *)callback {
+    self.innerWaterfallView.mlnui_touchesEndedCallback = callback;
+}
+
+- (void)luaui_setTouchesCancelledCallback:(MLNUIBlock *)callback {
+    self.innerWaterfallView.mlnui_touchesCancelledCallback = callback;
+}
+
+- (void)luaui_setTouchesBeganExtensionCallback:(MLNUIBlock *)callback {
+    self.innerWaterfallView.mlnui_touchesBeganExtensionCallback = callback;
+}
+
+- (void)luaui_setTouchesMovedExtensionCallback:(MLNUIBlock *)callback {
+    self.innerWaterfallView.mlnui_touchesMovedExtensionCallback = callback;
+}
+
+- (void)luaui_setTouchesEndedExtensionCallback:(MLNUIBlock *)callback {
+    self.innerWaterfallView.mlnui_touchesEndedExtensionCallback = callback;
+}
+
+- (void)luaui_setTouchesCancelledExtensionCallback:(MLNUIBlock *)callback {
+    self.innerWaterfallView.mlnui_touchesCancelledExtensionCallback = callback;
+}
 
 #pragma mark - Getters
 

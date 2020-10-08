@@ -56,31 +56,25 @@ static IMP __mlnui_in_UIButton_Origin_TouchesCancelled_Method_Imp;
     if (![self isKindOfClass:[UIButton class]]) {
         return;
     }
+    
     if (self.mlnui_touchesBeganCallback) {
-        NSArray<UITouch *> *touchesArray = touches.allObjects;
-        for (NSInteger i = 0; i < touchesArray.count; ++i) {
-            UITouch *touch = touchesArray[i];
-            if (touch.view == self) {
-                CGPoint point  = [touch locationInView:self];
-                [self.mlnui_touchesBeganCallback addFloatArgument:point.x];
-                [self.mlnui_touchesBeganCallback addFloatArgument:point.y];
-                [self.mlnui_touchesBeganCallback callIfCan];
-            }
+        UITouch *touch = touches.anyObject;
+        if (touch.view == self) {
+            CGPoint point  = [touch locationInView:self];
+            [self.mlnui_touchesBeganCallback addFloatArgument:point.x];
+            [self.mlnui_touchesBeganCallback addFloatArgument:point.y];
+            [self.mlnui_touchesBeganCallback callIfCan];
         }
     }
 
-
     if (self.mlnui_touchesBeganExtensionCallback) {
-        NSArray<UITouch *> *touchesArray = touches.allObjects;
-        for (NSInteger i = 0; i < touchesArray.count; ++i) {
-            UITouch *touch = touchesArray[i];
-            if (touch.view == self) {
-                CGPoint      screenLocation = [touch locationInView:self.window];
-                CGPoint      pageLocation   = [touch locationInView:self];
-                NSDictionary *touchDict     = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
-                [self.mlnui_touchesBeganExtensionCallback addObjArgument:[NSMutableDictionary dictionaryWithDictionary:touchDict]];
-                [self.mlnui_touchesBeganExtensionCallback callIfCan];
-            }
+        UITouch *touch = [touches anyObject];
+        if (touch.view == self) {
+            CGPoint screenLocation = [touch locationInView:self.window];
+            CGPoint pageLocation = [touch locationInView:self];
+            NSDictionary *touchDict = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
+            [self.mlnui_touchesBeganExtensionCallback addObjArgument:[NSMutableDictionary dictionaryWithDictionary:touchDict]];
+            [self.mlnui_touchesBeganExtensionCallback callIfCan];
         }
     }
 }
@@ -94,29 +88,23 @@ static IMP __mlnui_in_UIButton_Origin_TouchesCancelled_Method_Imp;
 //    [self mlnui_touchType:MLNUITouchType_Move touch:touches.anyObject event:event];
 
     if (self.mlnui_touchesMovedCallback) {
-        NSArray<UITouch *> *touchesArray = touches.allObjects;
-        for (NSInteger i = 0; i < touchesArray.count; ++i) {
-            UITouch *touch = touchesArray[i];
-            if (touch.view == self) {
-                CGPoint point  = [touch locationInView:self];
-                [self.mlnui_touchesMovedCallback addFloatArgument:point.x];
-                [self.mlnui_touchesMovedCallback addFloatArgument:point.y];
-                [self.mlnui_touchesMovedCallback callIfCan];
-            }
+        UITouch *touch = touches.anyObject;
+        if (touch.view == self) {
+            CGPoint point  = [touch locationInView:self];
+            [self.mlnui_touchesMovedCallback addFloatArgument:point.x];
+            [self.mlnui_touchesMovedCallback addFloatArgument:point.y];
+            [self.mlnui_touchesMovedCallback callIfCan];
         }
     }
 
     if (self.mlnui_touchesMovedExtensionCallback) {
-        NSArray<UITouch *> *touchesArray = touches.allObjects;
-        for (NSInteger i = 0; i < touchesArray.count; ++i) {
-            UITouch *touch = touchesArray[i];
-            if (touch.view == self) {
-                CGPoint      screenLocation = [touch locationInView:self.window];
-                CGPoint      pageLocation   = [touch locationInView:self];
-                NSDictionary *touchDict     = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
-                [self.mlnui_touchesMovedExtensionCallback addObjArgument:touchDict.mutableCopy];
-                [self.mlnui_touchesMovedExtensionCallback callIfCan];
-            }
+        UITouch *touch = [touches anyObject];
+        if (touch.view == self) {
+            CGPoint screenLocation = [touch locationInView:self.window];
+            CGPoint pageLocation = [touch locationInView:self];
+            NSDictionary *touchDict = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
+            [self.mlnui_touchesMovedExtensionCallback addObjArgument:[NSMutableDictionary dictionaryWithDictionary:touchDict]];
+            [self.mlnui_touchesMovedExtensionCallback callIfCan];
         }
     }
 }
@@ -130,29 +118,23 @@ static IMP __mlnui_in_UIButton_Origin_TouchesCancelled_Method_Imp;
     }
 
     if (self.mlnui_touchesEndedCallback) {
-        NSArray<UITouch *> *touchesArray = touches.allObjects;
-        for (NSInteger i = 0; i < touchesArray.count; ++i) {
-            UITouch *touch = touchesArray[i];
-            if (touch.view == self) {
-                CGPoint point  = [touch locationInView:self];
-                [self.mlnui_touchesEndedCallback addFloatArgument:point.x];
-                [self.mlnui_touchesEndedCallback addFloatArgument:point.y];
-                [self.mlnui_touchesEndedCallback callIfCan];
-            }
+        UITouch *touch = touches.anyObject;
+        if (touch.view == self) {
+            CGPoint point  = [touch locationInView:self];
+            [self.mlnui_touchesEndedCallback addFloatArgument:point.x];
+            [self.mlnui_touchesEndedCallback addFloatArgument:point.y];
+            [self.mlnui_touchesEndedCallback callIfCan];
         }
     }
 
     if (self.mlnui_touchesEndedExtensionCallback) {
-        NSArray<UITouch *> *touchesArray = touches.allObjects;
-        for (NSInteger i = 0; i < touchesArray.count; ++i) {
-            UITouch *touch = touchesArray[i];
-            if (touch.view == self) {
-                CGPoint      screenLocation = [touch locationInView:self.window];
-                CGPoint      pageLocation   = [touch locationInView:self];
-                NSDictionary *touchDict     = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
-                [self.mlnui_touchesEndedExtensionCallback addObjArgument:touchDict.mutableCopy];
-                [self.mlnui_touchesEndedExtensionCallback callIfCan];
-            }
+        UITouch *touch = [touches anyObject];
+        if (touch.view == self) {
+            CGPoint screenLocation = [touch locationInView:self.window];
+            CGPoint pageLocation = [touch locationInView:self];
+            NSDictionary *touchDict = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
+            [self.mlnui_touchesEndedExtensionCallback addObjArgument:[NSMutableDictionary dictionaryWithDictionary:touchDict]];
+            [self.mlnui_touchesEndedExtensionCallback callIfCan];
         }
     }
 }
@@ -166,30 +148,23 @@ static IMP __mlnui_in_UIButton_Origin_TouchesCancelled_Method_Imp;
 
 
     if (self.mlnui_touchesCancelledCallback) {
-        NSArray<UITouch *> *touchesArray = touches.allObjects;
-        for (NSInteger i = 0; i < touchesArray.count; ++i) {
-            UITouch *touch = touchesArray[i];
-            if (touch.view == self) {
-                CGPoint point  = [touch locationInView:self];
-                [self.mlnui_touchesEndedCallback addFloatArgument:point.x];
-                [self.mlnui_touchesEndedCallback addFloatArgument:point.y];
-                [self.mlnui_touchesEndedCallback callIfCan];
-            }
+        UITouch *touch = touches.anyObject;
+        if (touch.view == self) {
+            CGPoint point  = [touch locationInView:self];
+            [self.mlnui_touchesEndedCallback addFloatArgument:point.x];
+            [self.mlnui_touchesEndedCallback addFloatArgument:point.y];
+            [self.mlnui_touchesEndedCallback callIfCan];
         }
     }
 
-
     if (self.mlnui_touchesCancelledExtensionCallback) {
-        NSArray<UITouch *> *touchesArray = touches.allObjects;
-        for (NSInteger i = 0; i < touchesArray.count; ++i) {
-            UITouch *touch = touchesArray[i];
-            if (touch.view == self) {
-                CGPoint      screenLocation = [touch locationInView:self.window];
-                CGPoint      pageLocation   = [touch locationInView:self];
-                NSDictionary *touchDict     = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
-                [self.mlnui_touchesCancelledExtensionCallback addObjArgument:touchDict.mutableCopy];
-                [self.mlnui_touchesCancelledExtensionCallback callIfCan];
-            }
+        UITouch *touch = [touches anyObject];
+        if (touch.view == self) {
+            CGPoint screenLocation = [touch locationInView:self.window];
+            CGPoint pageLocation = [touch locationInView:self];
+            NSDictionary *touchDict = [self touchResultWithScreenLocation:screenLocation pageLocation:pageLocation target:self];
+            [self.mlnui_touchesCancelledExtensionCallback addObjArgument:[NSMutableDictionary dictionaryWithDictionary:touchDict]];
+            [self.mlnui_touchesCancelledExtensionCallback callIfCan];
         }
     }
 }

@@ -108,6 +108,8 @@
                        @"ArgoTableViewCeilingCellDemo.lua",
                        @"ArgoTableViewZoomPictureDemo.lua",
                        @"ArgoScrollViewDemo.lua",
+                       @"ArgoCollectionViewDemo.lua",
+                       @"ArgoWaterfallViewDemo.lua",
                        @"ViewPagerDemo.lua",
                        @"WaterfallViewDemo.lua",
 //                       @"MLNBindModelViewController",
