@@ -16,6 +16,7 @@
 #import "MLNUIKitInstanceHandlersManager.h"
 #import "MLNUIGaussEffectHandler.h"
 #import "MLNUICornerImageLoader.h"
+#import "UIView+MLNUIPinchGesture.h"
 
 //高斯模糊，值范围，0 ~ 25
 #define MLNUI_BlurScope 25.0f
