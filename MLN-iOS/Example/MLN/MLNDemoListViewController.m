@@ -110,6 +110,7 @@
                        @"ArgoScrollViewDemo.lua",
                        @"ArgoCollectionViewDemo.lua",
                        @"ArgoWaterfallViewDemo.lua",
+                       @"ArgoViewPagerDemo.lua",
                        @"ViewPagerDemo.lua",
                        @"WaterfallViewDemo.lua",
 //                       @"MLNBindModelViewController",

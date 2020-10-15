@@ -1,3 +1,4 @@
+
 ---数据
 dataSource = { "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=619938825,3320299346&fm=26&gp=0.jpg",
                "https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3388258119,3115603131&fm=26&gp=0.jpg",
@@ -23,38 +24,25 @@ tabSegment:tintColor(Color(0, 120, 120, 1))
 window:addView(tabSegment)
 
 adapter = ViewPagerAdapter()
+print("adapter init ========== ", adapter)
 adapter:getCount(function(section)
     return #dataSource
 end)
 
 adapter:initCell(function(cell, row)
     cell.contentView:bgColor(Color(255, 255, 255, 1))
-    cell.imageView = ImageView():width(MeasurementType.MATCH_PARENT):height(300)
+    cell.imageView = ImageView():widthPercent(100):height(300)
     cell.imageView:contentMode(ContentMode.SCALE_TO_FILL)
     cell.contentView:addView(cell.imageView)
-    
-    cell.imageView:enabled(true)
-    cell.imageView:touchBegin(function(x, y)
-        print("cell.imageView:touchBegin = ", x, y)
-    end)
-    cell.imageView:touchMove(function(x, y)
-        print("cell.imageView:touchMove = ", x, y)
-    end)
-    cell.imageView:touchEnd(function(x, y)
-        print("cell.imageView:touchEnd = ", x, y)
-    end)
-    cell.imageView:touchCancel(function(x, y)
-        print("cell.imageView:touchCancel = ", x, y)
-    end)
 end)
 adapter:fillCellData(function(cell, row)
     local item = dataSource[row]
     cell.imageView:image(item)
 end)
 
-viewPager = ViewPager():width(MeasurementType.MATCH_PARENT):height(MeasurementType.MATCH_PARENT):marginTop(topHeight + 60)
-viewPager:showIndicator(true)
-
+viewPager = ViewPager():widthPercent(100):heightPercent(100):marginTop(topHeight + 60)
+--viewPager:showIndicator(true)
+print("============ before set adapter =============", viewPager)
 viewPager:adapter(adapter)
 
 tabSegment:relatedToViewPager(viewPager, true)

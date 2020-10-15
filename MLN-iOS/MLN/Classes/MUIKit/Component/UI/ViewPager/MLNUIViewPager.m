@@ -57,6 +57,15 @@
 
 @implementation MLNUIViewPager
 
+- (instancetype)init
+{
+    if (self = [super initWithFrame:CGRectZero]){
+        self.contentMode = UIViewContentModeScaleAspectFit;
+    }
+    return self;
+}
+
+
 - (instancetype)initWithMLNUILuaCore:(MLNUILuaCore *)luaCore
 {
     if (self = [super initWithMLNUILuaCore:luaCore]){

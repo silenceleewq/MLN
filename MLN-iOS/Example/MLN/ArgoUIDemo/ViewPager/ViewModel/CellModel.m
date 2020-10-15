@@ -3,6 +3,15 @@
 
 @implementation CellModel
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
 #if DEBUG
 + (instancetype)defaultUserData {
     CellModel *cellModel = [CellModel new];
